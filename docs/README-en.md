@@ -86,7 +86,7 @@ Here is a simple html sample below(snippet)
 #### Adjust scrolling effect
 If you think the scrolling movement is too fast/slow, you can adjust scrolling effect by editing parameter.
 
-✅v0.2.0 alpha added totop button support，is using SmooScroll makes your totop button invalid, you can try this vesion with SmooScroll totop button.
+✅v0.2.0 alpha added totop button support，if using SmooScroll makes your totop button invalid, you can try this vesion with SmooScroll totop button.
 |parameter|default value|effect|
 |:---|:---:|:---:|
 |friction|0.04|smoothness of movement, 0.01 for smoothest but longest transform|
