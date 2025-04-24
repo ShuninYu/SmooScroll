@@ -91,9 +91,9 @@ If you think the scrolling movement is too fast/slow, you can adjust scrolling e
 |:---|:---:|:---:|
 |friction|0.04|smoothness of movement, 0.01 for smoothest but longest transform|
 |threshold|1|threshold of movement, when gap is smaller than this number(px), scrolling will reach the target position rightaway|
-|showAtPosition(仅v0.2.0-a only)|80|show backtotop button when this far(px) you scroll|
-|scrollDuration(仅v0.2.0-a only)|800|duration of back to top movement|
-|backToTopImage(仅v0.2.0-a only)|-|path to your totop button image|
+|showAtPosition(v0.2.0-a only)|80|show backtotop button when this far(px) you scroll|
+|scrollDuration(v0.2.0-a only)|800|duration of back to top movement|
+|backToTopImage(v0.2.0-a only)|-|path to your totop button image|
 
 ---
 ### Current issues
