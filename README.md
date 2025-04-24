@@ -6,13 +6,16 @@
 # SmooScroll*
 
 **基于默认滚动条的平滑滚动JS**
+
 *平滑滚动页面 / Smooth your scroll*
+
 **alpha版本，开发中*
 </div>
 
 ---
 SmooScroll是一个用于静态HTML网页的平滑滚动JS，基于原生JavaScript所以不需要任何依赖（比如jQuery、Vue等等）。
 SmooScroll的效果基于原生滚动条，不会屏蔽默认滚动条或创建假滚动条。
+
 ⚠️*SmooScroll目前还是非常早期的版本，它还并不完美。*
 
 #### 为什么使用SmooScroll？
@@ -28,6 +31,7 @@ SmooScroll的效果基于原生滚动条，不会屏蔽默认滚动条或创建�
 ### 如何使用
 #### 添加SmooScroll到你的网页
 SmooScroll暂时没有上传到CDN，修好bug之后会补上
+
 ⚠️由于目前存在的bug，不建议定义容器高度，而是建议使用relative/absolute布局，并且使用元素定位来确定网页高度，具体原因会在后面给出。
 ##### 1.下载你需要的SmooScroll版本，并存储在你的网站目录中
 ##### 2.在HTML文件中引入SmooScroll
@@ -79,6 +83,7 @@ SmooScroll暂时没有上传到CDN，修好bug之后会补上
 
 #### 调整滚动效果
 如果觉得滚动的太快/太慢，可以通过修改SmooScroll中的参数进行调整。
+
 ✅v0.2.0 alpha增加了回到顶部按钮的支持，如果使用SmooScroll让你原本的ToTop按钮失效，可以使用这个版本的SmooScroll。
 |参数|默认值|效果|
 |:---|:---:|:---:|
