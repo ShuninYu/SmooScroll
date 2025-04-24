@@ -22,7 +22,7 @@ SmooScroll的效果基于原生滚动条，不会屏蔽默认滚动条或创建�
 或许你已经了解过类似的网页滚动JS，比如[Lenis](https://github.com/darkroomengineering/lenis)或[GSAP ScrollSmoother](https://gsap.com/docs/v3/Plugins/ScrollSmoother/)。
 
 与Lenis不同的一点是，SmooScroll的平滑滚动效果并不直接作用在滚动条上。最直观的区别就是，当使用键盘方向键或直接拖拽滚动条时，页面仍然会平滑的滚动，而不是与滚动条的移动直接绑定，效果更类似ScrollSmoother。
-而ScrollSmoother是GSAP的一个付费用户组插件，使用它需要 **150USD（约1000RMB）** 一年的会员，如果只是想给网页添加平滑滚动效果，那么这个使用成本对于个人开发者/业余爱好者来说还是偏高。
+而ScrollSmoother是GSAP的一个付费用户组插件，使用它需要 **150USD（约1000CNY）** 一年的会员，如果只是想给网页添加平滑滚动效果，那么这个使用成本对于个人开发者/业余爱好者来说还是偏高。
 
 所以如上所言，如果只需要给网页整体添加一个平滑滚动效果，对于爱好者的轻度应用场景来说，SmooScroll会是一个不错的选择（当然，是在我把bug修复以后:P）。
 如果你不需要拖拽滚动条/键盘方向键控制时的平滑滚动效果，那么使用[Lenis](https://github.com/darkroomengineering/lenis)也足够了，或者你非常富有，那么直接花150USD加入GSAP会员使用[ScrollSmoother](https://gsap.com/docs/v3/Plugins/ScrollSmoother/)也是一种选择。
