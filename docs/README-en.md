@@ -30,7 +30,6 @@ But if you don't need the smooth scrolling effect when dragging scrollbar or pre
 
 ---
 ### How to use
-#### 添加SmooScroll到你的网页
 #### Add SmooScroll to your webpage
 SmooScroll is currently not available via CDN, will add CDN surpport after major bug fixed.
 
