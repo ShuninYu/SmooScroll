@@ -18,21 +18,21 @@ SmooScroll的效果基于原生滚动条，不会屏蔽默认滚动条或创建�
 
 ⚠️*SmooScroll目前还是非常早期的版本，它还并不完美。*
 
-#### 为什么使用SmooScroll？
+### 为什么使用SmooScroll？
 或许你已经了解过类似的网页滚动JS，比如[Lenis](https://github.com/darkroomengineering/lenis)或[GSAP ScrollSmoother](https://gsap.com/docs/v3/Plugins/ScrollSmoother/)。
 
 与Lenis不同的一点是，SmooScroll的平滑滚动效果并不直接作用在滚动条上。最直观的区别就是，当使用键盘方向键或直接拖拽滚动条时，页面仍然会平滑的滚动，而不是与滚动条的移动直接绑定，效果更类似ScrollSmoother。
 而ScrollSmoother是GSAP的一个付费用户组插件，使用它需要 **150USD（约1000CNY）** 一年的会员，如果只是想给网页添加平滑滚动效果，那么这个使用成本对于个人开发者/业余爱好者来说还是偏高。
 
 所以如上所言，如果只需要给网页整体添加一个平滑滚动效果，对于爱好者的轻度应用场景来说，SmooScroll会是一个不错的选择（当然，是在我把bug修复以后:P）。
-如果你不需要拖拽滚动条/键盘方向键控制时的平滑滚动效果，那么使用[Lenis](https://github.com/darkroomengineering/lenis)也足够了，或者你非常富有，那么直接花150USD加入GSAP会员使用[ScrollSmoother](https://gsap.com/docs/v3/Plugins/ScrollSmoother/)也是一种选择。
+如果你不需要拖拽滚动条/键盘方向键控制时的平滑滚动效果，那么使用Lenis也足够了。
 
 ---
 ### 如何使用
 #### 添加SmooScroll到你的网页
 SmooScroll暂时没有上传到CDN，修好bug之后会补上
 
-⚠️由于目前存在的bug，不建议定义容器高度，而是建议使用relative/absolute布局，并且使用元素定位来确定网页高度，具体原因会在后面给出。
+⚠️由于目前存在的bug，不建议将元素height定义太大，具体原因会在后面给出。
 ##### 1.下载你需要的SmooScroll版本，并存储在你的网站目录中
 ##### 2.在HTML文件中引入SmooScroll
 ```html
@@ -97,9 +97,13 @@ SmooScroll暂时没有上传到CDN，修好bug之后会补上
 ### 目前的问题
 由于本人并不是专业前端，对于JavaScript掌握较浅，所以SmooScroll目前还有一些问题。
 #### bug
-⚠️目前在scroll-container内部的div中，如果定义了较高的height，则会造成滚动条的错误。具体表现为滚动条位置与页面位置的不匹配/超限滚动，比如当你的滚动条只拖动了一半的时候，页面已经滚动到底部了，而这时候你仍然可以继续滚动页面。通常这会导致页面像是底部出现一片本不应该存在的空白区域，并且元素的height值越高，这个空白区域的面积就越大。
+⚠️目前在scroll-container内部的div中，如果定义了较大的height值，则会造成滚动条的错误。具体表现为滚动条位置与页面位置的不匹配/超限滚动，比如当你的滚动条只拖动了一半的时候，页面已经滚动到底部了，而这时候你仍然可以继续滚动页面。通常这会导致页面像是底部出现一片本不应该存在的空白区域，并且元素的height值越高，这个空白区域的面积就越大。这个问题只会由height触发，margin和padding均不会触发这个问题。
 
 🔎根据观察，暂时可以确定的是这是滚动距离的问题，当页面实际向下滚动了84px时，smoothContent中的transform.translate值为-42px，当实际向下滚动了200px时，这个值为-100px，这明显与实际滚动距离不符。所以当页面已经滚动到底部时，滚动条实际上还没有到达底部，仍然可以继续向下滚动，那么接着滚动显示的页面区域就只能是什么都没有的空间了。
 
-💉目前的临时解决方法是，避免给元素定义过高的height值，包括SmooScroll容器。使用relative/absolute布局，配合元素定位（例如使用包裹在SmooScroll容器内的footer标签：&lt;footer style="position:absolute; top:2000px;">&lt;/footer>）来确定网页的高度。这样能够避免滚动条超限滚动（网页底部出现空白区域）
+💉目前的临时解决方法是，避免给元素定义过高的height值，包括SmooScroll容器。
+
+如果网页中间需要较多的空白区域，可以使用空div配合较大的margin值来制造空位。
+
+如果网页使用relative/absolute布局，那么可以配合元素定位（例如使用包裹在SmooScroll容器内的footer标签：&lt;footer style="position:absolute; top:2000px;">&lt;/footer>）来确定网页的高度。这样能够避免滚动条超限滚动（网页底部出现空白区域）
 这个解决方法实际上也只是个权宜之计，治标不治本，虽然不会再滚动超出页面范围，但是滚动条最后会有一小截虚位，这一小段虚位不会影响页面，但是会让滚动条在底部时出现抖动。
