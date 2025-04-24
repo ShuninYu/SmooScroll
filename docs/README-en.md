@@ -14,7 +14,7 @@
 
 ---
 SmooScroll is a smooth scrolling JS for static HTML web pages, based on native JavaScript so it doesn't require any dependencies (such as jQuery, Vue, etc.).
-The effect of SmooScroll is based on native scrollbar and win't block the default scrollbar or creating a fake scrollbar.
+The effect of SmooScroll is based on native scrollbar and it won't block the default scrollbar or creating a fake scrollbar.
 #### Visit[sample web page](https://shuninyu.github.io/SmooScroll/)
 
 ⚠️*SmooScroll is currently an early version，so it is not perfect yet.*
