@@ -92,13 +92,12 @@ If you think the scrolling movement is too fast/slow, you can adjust scrolling e
 |:---|:---:|:---:|
 |friction|0.04|smoothness of movement, 0.01 for smoothest but longest transform|
 |threshold|1|threshold of movement, when gap is smaller than this number(px), scrolling will reach the target position rightaway|
-|showAtPosition(仅v0.2.0-a)|80|show backtotop button when this far(px) you scroll|
-|scrollDuration(仅v0.2.0-a)|800|duration of back to top movement|
-|backToTopImage(仅v0.2.0-a)|-|path to your totop button image|
+|showAtPosition(仅v0.2.0-a only)|80|show backtotop button when this far(px) you scroll|
+|scrollDuration(仅v0.2.0-a only)|800|duration of back to top movement|
+|backToTopImage(仅v0.2.0-a only)|-|path to your totop button image|
 
 ---
 ### Current issues
-由于本人并不是专业前端，对于JavaScript掌握较浅，所以SmooScroll目前还有一些问题。
 Since I'm not a professional front-end developer and have a shallow grasp of JavaScript, SmooScroll currently has some problems.
 #### bug
 ⚠️Currently, if a large height value is defined inside the scroll-container, it will cause scrollbar errors. Specifically, the scrollbar position does not match the page position and scrolling over-limit. For example, when you only drag the scrollbar halfway, the page has already scrolled to the bottom, and you can still scroll the page. Usually this will cause a blank area at the bottom of the page that should not exist, and the higher the height value of the element, the larger of ​​the blank area. This problem is only triggered by height, and neither margin nor padding will trigger this problem.
