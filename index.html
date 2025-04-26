@@ -18,7 +18,7 @@
     }
     
     body {
-        background: linear-gradient(80deg , rgb(209, 235, 216) 30% , rgb(192, 226, 236) , rgb(209, 212, 235));
+        background: linear-gradient(80deg , rgb(209, 235, 216) , rgb(192, 226, 236) , rgb(209, 212, 235));
         background-attachment: fixed;
         overflow: hidden; /* 防止双滚动条 */
         margin: 0;
@@ -33,7 +33,8 @@
     }
 
     .container {
-        background: linear-gradient(80deg, rgb(236, 190, 190), rgb(240 , 160 , 100));
+        background: linear-gradient(120deg, rgb(25,230,225), rgb(177,54,240));
+        color: white;
         width: 50vw;
         margin-left: auto;
         margin-right: auto;
@@ -58,10 +59,10 @@
             <div style="position: absolute; margin: 0 auto; left: 0;right: 0;">
                 <img src="https://ik.imagekit.io/shunin/SmooScroll/smooscroll-logo.svg" style="width: 10vw; margin-top: 6vw; margin-bottom: 6vw;" class="logo">
                 <p style="font-size: 1.4vw;">基于默认滚动条的平滑滚动JS<br>平滑滚动页面 | Smooth your scroll</p>
-                <p style="font-size: 1vw; width: 30vw; margin-top: 1vw; margin-left: auto; margin-right: auto; margin-bottom: 5vw;">SmooScroll是一个用于静态HTML网页的平滑滚动JS，基于原生JavaScript所以不需要任何依赖（比如jQuery、Vue等等）。<br>SmooScroll的效果基于原生滚动条，不会屏蔽默认滚动条或创建假滚动条。</p>
+                <p style="font-size: 1vw; width: 34vw; margin-top: 1vw; margin-left: auto; margin-right: auto; margin-bottom: 5vw;">SmooScroll是一个免费开源的，用于静态HTML网页的平滑滚动JS，<br>基于原生JavaScript所以不需要任何依赖（比如jQuery、Vue等等）。<br>SmooScroll的效果基于原生滚动条，不会屏蔽默认滚动条或创建假滚动条。</p>
                 <div class="container">
                     <h2 style="padding-top: 3vw; padding-bottom: 2vw;">为什么使用SmooScroll？</h2>
-                    <p style="font-size: 1vw; width: 40vw; margin: 0 auto; text-align: left; padding-bottom: 3vw;">或许你已经了解过类似的网页滚动JS，比如<a href="https://github.com/darkroomengineering/lenis" target="_blank">Lenis</a>或<a href="https://gsap.com/docs/v3/Plugins/ScrollSmoother/" target="_blank">GSAP ScrollSmoother</a>。<br><br>
+                    <p style="font-size: 1vw; width: 40vw; margin: 0 auto; text-align: left; padding-bottom: 3vw;">或许你已经了解过类似的网页滚动JS，比如<a href="https://github.com/darkroomengineering/lenis" target="_blank" style="color: wheat;">Lenis</a>或<a href="https://gsap.com/docs/v3/Plugins/ScrollSmoother/" target="_blank" style="color: wheat;">GSAP ScrollSmoother</a>。<br><br>
 
                         与Lenis不同的一点是，SmooScroll的平滑滚动效果并不直接作用在滚动条上。最直观的区别就是，当使用键盘方向键或直接拖拽滚动条时，页面仍然会平滑的滚动，而不是与滚动条的移动直接绑定，效果更类似ScrollSmoother。<br>
                         而ScrollSmoother是GSAP的一个付费用户组插件，使用它需要 150USD（约1000CNY） 一年的会员，如果只是想给网页添加平滑滚动效果，那么这个使用成本对于个人开发者/业余爱好者来说还是偏高。<br><br>
@@ -72,9 +73,9 @@
                 <div style="margin: 5vw;"></div>
                 <div class="container">
                     <h1 style="padding-top: 3vw; padding-bottom: 2vw;">现在开始使用SmooScroll！</h1>
-                    <a href="https://github.com/ShuninYu/SmooScroll" target="_blank" style="color: black; ">
+                    <a href="https://github.com/ShuninYu/SmooScroll" target="_blank" style="color: white;">
                         <svg aria-hidden="true" viewBox="0 0 24 24" version="1.1" width="5vw" data-view-component="true">
-                            <path d="M12 1C5.9225 1 1 5.9225 1 12C1 16.8675 4.14875 20.9787 8.52125 22.4362C9.07125 22.5325 9.2775 22.2025 9.2775 21.9137C9.2775 21.6525 9.26375 20.7862 9.26375 19.865C6.5 20.3737 5.785 19.1912 5.565 18.5725C5.44125 18.2562 4.905 17.28 4.4375 17.0187C4.0525 16.8125 3.5025 16.3037 4.42375 16.29C5.29 16.2762 5.90875 17.0875 6.115 17.4175C7.105 19.0812 8.68625 18.6137 9.31875 18.325C9.415 17.61 9.70375 17.1287 10.02 16.8537C7.5725 16.5787 5.015 15.63 5.015 11.4225C5.015 10.2262 5.44125 9.23625 6.1425 8.46625C6.0325 8.19125 5.6475 7.06375 6.2525 5.55125C6.2525 5.55125 7.17375 5.2625 9.2775 6.67875C10.1575 6.43125 11.0925 6.3075 12.0275 6.3075C12.9625 6.3075 13.8975 6.43125 14.7775 6.67875C16.8813 5.24875 17.8025 5.55125 17.8025 5.55125C18.4075 7.06375 18.0225 8.19125 17.9125 8.46625C18.6138 9.23625 19.04 10.2125 19.04 11.4225C19.04 15.6437 16.4688 16.5787 14.0213 16.8537C14.42 17.1975 14.7638 17.8575 14.7638 18.8887C14.7638 20.36 14.75 21.5425 14.75 21.9137C14.75 22.2025 14.9563 22.5462 15.5063 22.4362C19.8513 20.9787 23 16.8537 23 12C23 5.9225 18.0775 1 12 1Z"></path>
+                            <path fill="white" d="M12 1C5.9225 1 1 5.9225 1 12C1 16.8675 4.14875 20.9787 8.52125 22.4362C9.07125 22.5325 9.2775 22.2025 9.2775 21.9137C9.2775 21.6525 9.26375 20.7862 9.26375 19.865C6.5 20.3737 5.785 19.1912 5.565 18.5725C5.44125 18.2562 4.905 17.28 4.4375 17.0187C4.0525 16.8125 3.5025 16.3037 4.42375 16.29C5.29 16.2762 5.90875 17.0875 6.115 17.4175C7.105 19.0812 8.68625 18.6137 9.31875 18.325C9.415 17.61 9.70375 17.1287 10.02 16.8537C7.5725 16.5787 5.015 15.63 5.015 11.4225C5.015 10.2262 5.44125 9.23625 6.1425 8.46625C6.0325 8.19125 5.6475 7.06375 6.2525 5.55125C6.2525 5.55125 7.17375 5.2625 9.2775 6.67875C10.1575 6.43125 11.0925 6.3075 12.0275 6.3075C12.9625 6.3075 13.8975 6.43125 14.7775 6.67875C16.8813 5.24875 17.8025 5.55125 17.8025 5.55125C18.4075 7.06375 18.0225 8.19125 17.9125 8.46625C18.6138 9.23625 19.04 10.2125 19.04 11.4225C19.04 15.6437 16.4688 16.5787 14.0213 16.8537C14.42 17.1975 14.7638 17.8575 14.7638 18.8887C14.7638 20.36 14.75 21.5425 14.75 21.9137C14.75 22.2025 14.9563 22.5462 15.5063 22.4362C19.8513 20.9787 23 16.8537 23 12C23 5.9225 18.0775 1 12 1Z"></path>
                         </svg>
                         <p style="font-size: 1vw;">Get SmooScroll from GitHub</p>
                     </a>
