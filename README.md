@@ -14,8 +14,8 @@
 
 ---
 #### [English version](https://github.com/ShuninYu/SmooScroll/blob/main/docs/README-en.md)
-SmooScroll是一个用于静态HTML网页的平滑滚动JS，基于原生JavaScript所以不需要任何依赖（比如jQuery、Vue等等）。
-SmooScroll的效果基于原生滚动条，不会屏蔽默认滚动条或创建假滚动条。
+SmooScroll是一个免费开源的，用于静态HTML网页的平滑滚动JS，基于原生JavaScript所以不需要任何依赖（比如jQuery、Vue等等）。
+SmooScroll的效果基于原生滚动条，不会屏蔽默认滚动条或创建假滚动条，同时包含非常简单就能使用的回到顶部按钮功能。
 #### 观看[示例网页](https://shuninyu.github.io/SmooScroll/)
 
 ⚠️*SmooScroll目前还是非常早期的版本，所以它还并不完美。*
@@ -39,7 +39,7 @@ SmooScroll目前无法通过CDN提供，修复bug后将添加CDN支持。
 ##### 2.在HTML文件中引入SmooScroll
 ```html
 <!--记得替换路径和文件名为你自己的路径和对应版本文件名-->
-<script src="your/path/to/smooscroll-0.2.0-a.js"></script>
+<script src="your/path/to/smooscroll-0.3.0-a.js"></script>
 ```
 ⚠️需要注意文件名，不同版本文件名有所不同
 ##### 3.将页面内容包裹在容器中
@@ -86,20 +86,47 @@ SmooScroll目前无法通过CDN提供，修复bug后将添加CDN支持。
 #### 调整滚动效果
 如果觉得滚动的太快/太慢，可以通过修改SmooScroll中的参数进行调整。
 
-✅v0.2.0 alpha增加了回到顶部按钮的支持，如果使用SmooScroll让你原本的ToTop按钮失效，可以使用这个版本的SmooScroll。
 |参数|默认值|效果|
 |:---|:---:|:---:|
 |friction|0.04|滚动惯性系数(平滑程度)，0.01最平滑但过渡最久|
 |threshold|1|停止动画的阈值（像素），当还剩多少像素时让滚动直接到位|
-|showAtPosition(仅v0.2.0-a)|80|滚动多少像素后回到顶部按钮才会出现|
-|scrollDuration(仅v0.2.0-a)|800|返回顶部过渡时长|
-|backToTopImage(仅v0.2.0-a)|-|回到顶部按钮的图片|
+|showAtPosition|80|滚动多少像素后回到顶部按钮才会出现|
+|backToTopImage|-|回到顶部按钮的图片|
+
+#### 自定义回到顶部按钮样式
+⚠️v0.2.0 alpha 增加了回到顶部按钮的支持，建议使用SmooScroll的回到顶部按钮，由于工作原理的问题，SmooScroll可能让其他的回到顶部按钮失效。
+
+##### 在smooscroll中找到 ```backToTopBtn.style.cssText```，如下：
+```js
+//↓↓↓ 返回顶部按钮样式，可自定义 scroll-to-top button style, you can customize it ↓↓↓
+backToTopBtn.style.cssText = `
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 90px;
+    height: 90px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+    z-index: 1000;
+    background-size: contain;
+    `;
+```
+##### 参考下面的表格，按照你的需求修改参数即可
+⚠️请不要修改表格中没列出的参数，否则可能破坏按钮的效果。
+|参数|默认值|效果|
+|:---|:---:|:---:|
+|bottom|20px|按钮距离页面窗口底端的距离（如果需要按照窗口比例定位可以将单位从px改为vw，即窗口宽度，1vw = 窗口宽度1%）|
+|right|20px|按钮距离页面窗口右端的距离（需要按比例定位的话方法同上）|
+|width|90px|按钮的宽度，单位也可以改为vw|
+|transition|0.3s|⚠️请只修改数字⚠️按钮淡入淡出效果过渡时长（单位秒）|
 
 ---
 ### 目前的问题
 由于本人并不是专业前端，对于JavaScript掌握较浅，所以SmooScroll目前还有一些问题。
 #### bug
-⚠️目前在scroll-container内部，如果定义了较大的height值，则会造成滚动条的错误。具体表现为滚动条位置与页面位置的不匹配/超限滚动，比如当你的滚动条只拖动了一半的时候，页面已经滚动到底部了，而这时候你仍然可以继续滚动页面。通常这会导致页面像是底部出现一片本不应该存在的空白区域，并且元素的height值越高，这个空白区域就越大。这个问题只会由height触发，margin和padding均不会触发这个问题。
+⚠️目前在scroll-container内部，如果定义了较大的高度值，则会造成滚动条的错误。具体表现为滚动条位置与页面位置的不匹配/超限滚动，比如当你的滚动条只拖动了一半的时候，页面已经滚动到底部了，而这时候你仍然可以继续滚动页面。通常这会导致页面像是底部出现一片本不应该存在的空白区域，并且元素的height值越高，这个空白区域就越大。这个问题主要由height触发，margin和padding有时也会触发这个问题。
 
 🔎根据观察，暂时可以确定的是这是滚动距离的问题，当页面实际向下滚动了84px时，smoothContent中的transform.translate值为-42px，当实际向下滚动了200px时，这个值为-100px，这明显与实际滚动距离不符。所以当页面已经滚动到底部时，滚动条实际上还没有到达底部，仍然可以继续向下滚动，那么接着滚动显示的页面区域就只能是什么都没有的空间了。
 
