@@ -1,6 +1,6 @@
 /*
 SmooScroll.js
-Author @孤灯从流Shuninyu
+Author 孤灯从流Shuninyu
 version 0.1.0 alpha
 */
 document.addEventListener('DOMContentLoaded', function () {
@@ -57,5 +57,6 @@ document.addEventListener('DOMContentLoaded', function () {
         applyTransform();
     }
 
+    // 初始化平滑滚动
     initSmoothScroll();
 });
