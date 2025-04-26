@@ -131,5 +131,5 @@ Since I'm not a professional front-end developer and have a shallow grasp of Jav
 🔎Based on observation, it can be determined that this is a problem of scrolling distance. When the page is actually scrolled down 84px, the transform.translate value in smoothContent is -42px, when it is actually scrolled down 200px, this value is -100px, which is obviously inconsistent with the actual scrolling distance. So when the page has scrolled to the bottom, the scroll bar has not actually reached the bottom and can still scrolling down. Then when you scroll down further, the displayed area will be just a space with nothing in it.
 
 💉The current temporary solution is to avoid defining a height value too high, including SmooScroll containers.
-
 If you need more blank space(or just space for relative/absolute layout) in the webpage, you can use an empty div with a larger margin value to create the space for the page.
+>None of the methods above can completely avoid the problem, and we are still trying to fix this problem.
