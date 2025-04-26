@@ -18,7 +18,7 @@
     }
     
     body {
-        background: linear-gradient(100deg, rgb(240 , 160 , 160), rgb(240 , 160 , 100));
+        background: linear-gradient(80deg , rgb(209, 235, 216) 30% , rgb(192, 226, 236) , rgb(209, 212, 235));
         background-attachment: fixed;
         overflow: hidden; /* 防止双滚动条 */
         margin: 0;
@@ -33,7 +33,7 @@
     }
 
     .container {
-        background: linear-gradient(20deg, aliceblue , lightblue);
+        background: linear-gradient(80deg, rgb(236, 190, 190), rgb(240 , 160 , 100));
         width: 50vw;
         margin-left: auto;
         margin-right: auto;
@@ -90,110 +90,92 @@
                 </footer>
             </div>
 
-            <div style="position: absolute; font-size: 2vw; top: 17vw; left: 43.4vw; z-index: 1;"><p style="display: inline-block; font-size: 3vw;">S</p>moo<p style="display: inline-block; color: rgb(255, 255, 255);">th</p></div>
+            <div style="position: absolute; font-size: 2vw; top: 17vw; left: 43.4vw; z-index: 1;"><p style="display: inline-block; font-size: 3vw;">S</p>moo<p style="display: inline-block; color: rgb(170, 170, 170);">th</p></div>
             <div style="position: absolute; font-size: 2vw; top: 17vw; left: 49.7vw; z-index: 2;"><p style="display: inline-block; color: rgb(0, 0, 0); font-size: 3vw;">S</p>croll</div>
         </div>
     </div>
   </div>
 
   <script>
-    /*
-    SmooScroll.js
-    Author 孤灯从流Shuninyu
-    version 0.2.0 alpha
-    */
-    document.addEventListener('DOMContentLoaded', function () {
-        // 配置参数
+    // smooscroll.js (修正版)
+    document.addEventListener('DOMContentLoaded', function() {
         const config = {
-            backToTopImage: 'https://ik.imagekit.io/shunin/SmooScroll/BackToTop.svg', // 返回顶部按钮图片路径 path to your button image
-            showAtPosition: 80, // 显示按钮的滚动距离 show backtotop button when this far(px) you scroll
-            scrollDuration: 800, // 返回顶部动画时长 duration of back to top movement
-            friction: 0.04, //滚动惯性系数(平滑程度)，0.01最平滑但过渡最久 smoothness of movement, 0.01 for smoothest but longest transform
-            threshold: 1 //停止动画的阈值（像素），当还剩多少像素时让滚动直接到位 threshold of movement, when gap is smaller than this number(px), scrolling will reach the target position rightaway
+        backToTopImage: 'https://ik.imagekit.io/shunin/SmooScroll/BackToTop.svg', // 测试图片
+        showAtPosition: 80,
+        friction: 0.04,
+        threshold: 0.5
         };
-
+    
         function initSmoothScroll() {
-            const scrollContainer = document.getElementById('scroll-container');
-            const smoothContent = document.getElementById('smooth-content');
-
-            // 创建返回顶部按钮
-            const backToTopBtn = document.createElement('img');
-            backToTopBtn.src = config.backToTopImage;
-            //返回顶部按钮样式，可自定义
-            backToTopBtn.style.cssText = `
-                position: fixed;
-                bottom: 3vw;
-                right: 3vw;
-                width: 4vw;
-                height: 4vw;
-                cursor: pointer;
-                opacity: 0;
-                transition: opacity 0.3s;
-                pointer-events: none;
-                z-index: 1000;
-                background-size: contain;
-                image-rendering: pixelated;
-                `;
-            document.body.appendChild(backToTopBtn);
-
-            let targetScroll = { x: 0, y: 0 };
-            let currentScroll = { x: scrollContainer.scrollLeft, y: scrollContainer.scrollTop };
-            let animationFrameId = null;
-
-            function applyTransform() {
-                smoothContent.style.transform = `translate(
-                ${-currentScroll.x}px,
-                ${-currentScroll.y}px
-                )`;
-            }
-
-            function animate() {
-                const dx = targetScroll.x - currentScroll.x;
-                const dy = targetScroll.y - currentScroll.y;
-
-                currentScroll.x += dx * config.friction;
-                currentScroll.y += dy * config.friction;
-
-                if (Math.abs(dx) < config.threshold && Math.abs(dy) < config.threshold) {
-                    currentScroll.x = targetScroll.x;
-                    currentScroll.y = targetScroll.y;
-                    animationFrameId = null;
-                } else {
-                    animationFrameId = requestAnimationFrame(animate);
-                }
-
-                applyTransform();
-            }
-
-            // 返回顶部功能
-            function scrollToTop() {
-                targetScroll.y = 0;
-                scrollContainer.scrollTop = 0;
-                if (!animationFrameId) {
-                    animationFrameId = requestAnimationFrame(animate);
-                }
-            }
-
-            // 事件监听
-            scrollContainer.addEventListener('scroll', () => {
-                targetScroll.x = scrollContainer.scrollLeft;
-                targetScroll.y = scrollContainer.scrollTop;
-                scrollContainer.scrollLeft = targetScroll.x;
-                scrollContainer.scrollTop = targetScroll.y;
-
-                // 控制按钮显示
-                backToTopBtn.style.opacity = targetScroll.y > config.showAtPosition ? 1 : 0;
-                backToTopBtn.style.pointerEvents = targetScroll.y > config.showAtPosition ? 'auto' : 'none';
-
-                if (!animationFrameId) {
-                    animationFrameId = requestAnimationFrame(animate);
-                }
-            });
-
-            backToTopBtn.addEventListener('click', scrollToTop);
-            applyTransform();
+        // 自动适配容器
+        const scrollContainer = document.getElementById('scroll-container') || document.scrollingElement;
+        const smoothContent = document.getElementById('smooth-content');
+    
+        // 强制样式注入
+        const style = document.createElement('style');
+        style.textContent = `
+            html { overflow: hidden !important; }
+            #smooth-content { position: relative; }
+        `;
+        document.head.appendChild(style);
+    
+        // 创建按钮
+        const backToTopBtn = document.createElement('img');
+        backToTopBtn.src = config.backToTopImage;
+        Object.assign(backToTopBtn.style, {
+            position: 'fixed',
+            bottom: '20px',
+            right: '20px',
+            width: '114px',
+            height: '72px',
+            cursor: 'pointer',
+            opacity: '0',
+            transition: 'opacity 0.3s',
+            pointerEvents: 'none',
+            zIndex: '1000'
+        });
+        document.body.appendChild(backToTopBtn);
+    
+        // 动画系统
+        let targetY = 0, currentY = 0, animating = false;
+        
+        function update() {
+            smoothContent.style.transform = `translateY(${-currentY}px)`;
+            requestAnimationFrame(animate);
         }
-
+    
+        function animate() {
+            const dy = targetY - currentY;
+            currentY += dy * config.friction;
+            
+            if (Math.abs(dy) > config.threshold) {
+            update();
+            } else {
+            currentY = targetY;
+            animating = false;
+            }
+            
+            // 按钮显示逻辑
+            backToTopBtn.style.opacity = targetY > config.showAtPosition ? '1' : '0';
+            backToTopBtn.style.pointerEvents = targetY > config.showAtPosition ? 'auto' : 'none';
+        }
+    
+        // 滚动监听
+        (scrollContainer === document.scrollingElement ? window : scrollContainer)
+            .addEventListener('scroll', () => {
+            targetY = scrollContainer.scrollTop;
+            if (!animating) {
+                animating = true;
+                update();
+            }
+            }, { passive: true });
+    
+        // 返回顶部
+        backToTopBtn.addEventListener('click', () => {
+            scrollContainer.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        }
+    
         initSmoothScroll();
     });
     </script>
