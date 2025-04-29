@@ -64,11 +64,9 @@ In HTML file, add ```id="donotscrollthis"``` into elements you don't want to scr
 |:---|:---:|:---:|
 |scrollStepDuration|```1```|Smooth scrolling effect duration per step (in seconds)|
 |bezier|```.06 , .08 , 0 , .91```|Smooth scrolling Bezier curve value (⚠️ If you don't know what this is, just don't touch it)|
-
-#### Customize scroll-to-top button
-⚠️v0.2.0 alpha added scroll-to-top button support, we recommend you to use SmooScroll's scroll-to-top button, using SmooScroll may cause other scroll-to-top button invalid.
 ### Customize back-to-top button
-⚠️We suggest using SmooScroll's back-to-top button to prevent button failure caused by conflicting working modes
+>⚠️We suggest using SmooScroll's back-to-top button to prevent button failure caused by conflicting working modes
+
 #### Customize ```const config``` in the head of SmooScroll, reference:
 |name|default value|effect|
 |:---|:---:|:---:|
