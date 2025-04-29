@@ -19,7 +19,7 @@ The effect of SmooScroll is based on native scrollbar and it won't block the def
 #### Visit[sample web page](https://shuninyu.github.io/SmooScroll/)
 
 ### Why SmooScroll？
-If you need to add a smooth scrolling effect to the webpage, SmooScroll would be a good choice. SmooScroll is small size and very easy to deploy. You just need to import SmooScroll into your webpage to make it work!
+If you need to add a smooth scrolling effect to the webpage, SmooScroll would be a good choice. SmooScroll is small size and very easy to deploy. You just need to import SmooScroll into your webpage to make it work!<br>SmooScroll will automatically wrap your webpage content into the SmooScroll container, giving your webpage a smooth scrolling effect.
 
 Maybe you already know some similar smooth scrolling JS like[Lenis](https://github.com/darkroomengineering/lenis)or[GSAP ScrollSmoother](https://gsap.com/docs/v3/Plugins/ScrollSmoother/).
 

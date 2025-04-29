@@ -18,9 +18,7 @@ SmooScroll的效果基于原生滚动条，不会屏蔽默认滚动条或创建�
 #### 观看[示例网页](https://shuninyu.github.io/SmooScroll/)
 
 ### 为什么使用SmooScroll？
-如果需要给网页整体添加一个平滑滚动效果，SmooScroll会是一个不错的选择，SmooScroll体积小、简单易用。要使用SmooScroll，你只需要导入SmooScroll到你的网页就可以让它工作！
-
-SmooScroll会自动将你的网页内容包裹进SmooScroll容器，让你的网页拥有平滑滚动效果。如果
+如果需要给网页整体添加一个平滑滚动效果，SmooScroll会是一个不错的选择，SmooScroll体积小、简单易用。要使用SmooScroll，你只需要导入SmooScroll到你的网页就可以让它工作！<br>SmooScroll会自动将你的网页内容包裹进SmooScroll容器，让你的网页拥有平滑滚动效果。
 
 或许你已经了解过类似的网页滚动JS，比如[Lenis](https://github.com/darkroomengineering/lenis)或[GSAP ScrollSmoother](https://gsap.com/docs/v3/Plugins/ScrollSmoother/)。
 
