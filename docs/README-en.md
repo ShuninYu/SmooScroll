@@ -11,7 +11,7 @@
 </div>
 
 ---
-SmooScroll is a free-open-source, small size, easy deploying smooth scrolling JS, based on native JavaScript so it doesn't require any dependencies (such as jQuery, Vue, etc.).
+SmooScroll is a free-open-source, light weighted, easy deploying smooth scrolling JS, based on native JavaScript so it doesn't require any dependencies (such as jQuery, Vue, etc.).
 The effect of SmooScroll is based on native scrollbar and it won't block the default scrollbar or creating a fake scrollbar, it also have scroll-to-top button that very easy to setup.
 #### Visit [sample page](https://shuninyu.github.io/SmooScroll/)
 
