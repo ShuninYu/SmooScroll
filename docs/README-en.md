@@ -13,7 +13,7 @@
 ---
 SmooScroll is a free-open-source, small size, easy deploying smooth scrolling JS, based on native JavaScript so it doesn't require any dependencies (such as jQuery, Vue, etc.).
 The effect of SmooScroll is based on native scrollbar and it won't block the default scrollbar or creating a fake scrollbar, it also have scroll-to-top button that very easy to setup.
-#### Visit[sample page](https://shuninyu.github.io/SmooScroll/)
+#### Visit [sample page](https://shuninyu.github.io/SmooScroll/)
 
 ### Why SmooScroll？
 If you need to add a smooth scrolling effect to the webpage, SmooScroll would be a good choice. SmooScroll is small size and very easy to deploy. You just need to import SmooScroll into your webpage to make it work!<br>SmooScroll will automatically wrap your webpage content into the SmooScroll container, giving your webpage a smooth scrolling effect.
