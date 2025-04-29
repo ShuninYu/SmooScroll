@@ -38,7 +38,7 @@ Besides, ScrollSmoother is a paying customer only plugin, it needs a **150USD** 
 ```
 ⚠️Please remind the filename, different version has different filename
 ## Set up SmooScroll
->Although SmooScroll only needs to be imported to work, we still recommend you to make some necessary adjustments, such as mark out the contents that you don't want to scroll, and defining the image path of the back-to-top button
+>Although SmooScroll works by only importing, we still recommend you to make some necessary adjustments, such as mark out the contents that you don't want to scroll, and defining the image path of the back-to-top button
 ### Mark elements you don't want to scroll
 In HTML file, add ```id="donotscrollthis"``` into elements you don't want to scroll, for example:
 ```html
