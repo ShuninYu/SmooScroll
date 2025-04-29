@@ -29,11 +29,6 @@ Besides, ScrollSmoother is a paying customer only plugin, it needs a **150USD** 
 ---
 ## How to use
 ## Add SmooScroll to your webpage
-### CDN
-Add this script into your HTML file 
-```html
-<script src="https://cdn.jsdelivr.net/gh/ShuninYu/SmooScroll@v1.0.0/src/smooscroll-1.0.0.js"></script>
-```
 ### Deploy locally
 #### 1.Download SmooScroll and store it in your website directory
 #### 2.Import SmooScroll in HTML document

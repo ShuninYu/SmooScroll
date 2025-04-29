@@ -28,11 +28,6 @@ SmooScroll的效果基于原生滚动条，不会屏蔽默认滚动条或创建�
 ---
 # 如何使用SmooScroll？
 ## 添加SmooScroll到你的网页
-### CDN导入
-在你的HTML文件中添加连接
-```html
-<script src="https://cdn.jsdelivr.net/gh/ShuninYu/SmooScroll@v1.0.0/src/smooscroll-1.0.0.js"></script>
-```
 ### 本地部署
 #### 1.下载SmooScroll并存储在你的网站目录中
 #### 2.在HTML文件中引入SmooScroll
