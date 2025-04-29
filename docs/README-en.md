@@ -3,13 +3,11 @@
   <img src="https://ik.imagekit.io/shunin/SmooScroll/smooscroll-logo.svg" height="150px" />
 </a>
 
-# SmooScroll*
+# SmooScroll
 
 **基于默认滚动条的平滑滚动JS**<br>**Smooth Scrolling JS base on native scrollbar**
 
 *平滑滚动页面 / Smooth your scroll*
-
-**alpha version, still in development*
 </div>
 
 ---
