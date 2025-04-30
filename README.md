@@ -5,7 +5,7 @@
 
 # SmooScroll
 
-**基于原生滚动条的平滑滚动JS**<br>**Smooth Scrolling JS base on native scrollbar**
+**基于原生滚动条的平滑滚动JS**<br>**Smooth Scrolling JS based on native scrollbar**
 
 *平滑滚动页面 / Smooth your scroll*
 </div>
