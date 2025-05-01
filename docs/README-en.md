@@ -20,8 +20,7 @@ If you need to add a smooth scrolling effect to the webpage, SmooScroll would be
 
 Maybe you already know some similar smooth scrolling JS like[Lenis](https://github.com/darkroomengineering/lenis)or[GSAP ScrollSmoother](https://gsap.com/docs/v3/Plugins/ScrollSmoother/).
 
-Unlike Lenis, SmooScroll' s smooth scrolling effect is decoupled from the scrollbar. The most intuitive difference is that when pressing keyboard arrow keys or dragging scrollbar, the webpage will still scroll smoothly, rather than being directly bounding to scrollbar's movement.
-(Updated 5/1/2025: GSAP is now 100% free)ScrollSmoother's advantage is that it can combines GSAP's powerful plugin library to create complex web animations. 
+Unlike Lenis, SmooScroll' s smooth scrolling effect is decoupled from the scrollbar. The most intuitive difference is that when pressing keyboard arrow keys or dragging scrollbar, the webpage will still scroll smoothly, rather than being directly bounding to scrollbar's movement.<br>(Updated 5/1/2025: GSAP is now 100% free)ScrollSmoother's advantage is that it can combines GSAP's powerful plugin library to create complex web animations. If you only need a plug and play page smooth scrolling effect & back-to-top button, SmooScroll would also be a good choice.
 
 ---
 ## How to use
