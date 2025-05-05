@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const config = {
         //平滑滚动效果配置
         scrollStepDuration: "1",  // 每步平滑滚动效果时长（单位秒）
-        bezier: ".06 , .08 , 0 , .91", // 平滑滚动的贝塞尔曲线值（如果你不知道这是什么，那别动它就完事了）
+        bezier: ".35,.73,.69,1", // 平滑滚动的贝塞尔曲线值（如果你不知道这是什么，那别动它就完事了）
 
         //回到顶部按钮配置
         buttonImage: "https://ik.imagekit.io/shunin/SmooScroll/BackToTop.svg",  // 按钮图片路径
