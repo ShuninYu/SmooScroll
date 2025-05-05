@@ -57,7 +57,7 @@ SmooScroll的效果基于原生滚动条，不会屏蔽默认滚动条或创建�
 ```
 ⚠️请注意文件名称，不同版本会有不同的文件名
 ## 二、配置SmooScroll
->SmooScroll的```auto-lite```版本只需要导入就可以工作，如果要使用```manual```版本或非```lite```版本的SmooScroll，请做一些必要的调整。
+>SmooScroll的```auto-lite```版本只需要导入就可以工作，如果要使用```manual```版本或非```lite```版本的SmooScroll，请对SmooScroll做一些必要的设置。
 ### 创建包裹层（仅manual版本）
 在你的HTML文件中添加 ```<div class="smooth-content"></div>``` ，并将所有需要滚动的内容包裹进这个div内，例如：
 ```html
