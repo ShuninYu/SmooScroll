@@ -23,28 +23,54 @@ Maybe you already know some similar smooth scrolling JS like[Lenis](https://gith
 Unlike Lenis, SmooScroll' s smooth scrolling effect is decoupled from the scrollbar. The most intuitive difference is that when pressing keyboard arrow keys or dragging scrollbar, the webpage will still scroll smoothly, rather than being directly bounding to scrollbar's movement.<br>(Updated 5/1/2025: GSAP is now 100% free)ScrollSmoother's advantage is that it can combines GSAP's powerful plugin library to create complex web animations. If you only need a plug and play page smooth scrolling effect & back-to-top button, SmooScroll would also be a good choice.
 
 ---
+# Choose a version
+>SmooScroll has 4 different versions, you can chose the version you need.
+
+|version suffix|auto pack whole page|has go-to-top button|
+|:---|:---:|:---:|
+|auto|✅|✅|
+|auto-lite|✅|❌|
+|manual|❌|✅|
+|manual-lite|❌|❌|
+
+>As you can see, these four versions are different combinds of auto/manual/lite, watch explanations below.
+
+### auto
+Version with suffix ```auto``` will automatically wrap the entire page into the SmooScroll container, making it suitable for pages without any fixed (```position: fixed;```) elements realative to the browser window (such as navigator, buttons, etc.).<br>This version is really easy to deploy, just need to add SmooScroll into your page and do some simple modifications.<br>If you use ```auto-lite``` version, you only need to add SmooScroll and it will work!
+
+### manual
+Version with suffix ```manual``` needs you to wrap the contents manualy. Create a SmooScroll container (```<div class="smooth-content"></div>```) and wrap contents-you-want-to-scroll into it. This version suits pages that have fixed (```position: fixed;```) elements realative to the browser window (such as navigator, buttons, etc.).<br>Don't worry about forgetting to wrap the contents, SmooScroll will warn you every time you refresh the page if you forgot to create the SmooScroll container.
+
+### lite
+Version with suffix ```lite``` doesn't has SmooScroll back-to-top button. If your page already has a back-to-top button and it still woks fine after deploying the ```lite``` version of SmooScroll, then you can use the ```lite``` version with confidence.<br>If youe back-to-top button doesn't works fine after deploying the ```lite``` version of SmooScroll, it is reecommended to use the non lite version.
+
+---
 ## How to use
-## Add SmooScroll to your webpage
+## First, Add SmooScroll to your webpage
 ### Deploy locally
 #### 1.Download SmooScroll and store it in your website directory
 #### 2.Import SmooScroll in HTML document
 ```html
 <!--Remember to change the path and filename with yours-->
-<script src="your/path/to/smooscroll-1.0.0.js"></script>
+<script src="your/path/to/smooscroll-1.1.0-auto-lite.js"></script>
 ```
 ⚠️Please remind the filename, different version has different filename
-## Set up SmooScroll
->Although SmooScroll can works by only importing, we still recommend you to make some necessary adjustments, such as mark out the contents that you don't want to scroll, and defining the image path of the back-to-top button
-### Mark elements you don't want to scroll
-In HTML file, add ```id="donotscrollthis"``` into elements you don't want to scroll, for example:
+## Then, Set up SmooScroll
+>SmooScroll's ```auto-lite``` version will work by just import it into your page. If you use ```manual``` version or non ```lite``` version, please make some necessary modifications.
+### Create SmooScroll container (manual versions only)
+Add ```<div class="smooth-content"></div>``` into your HTML, and wrap all the contents that need to scroll into this div, for example:
 ```html
 <body>
-    <!-- ↓↓↓contents don't need to scroll↓↓↓ -->
-    <div id="donotscrollthis" class="topbar"></div>
-    <h1 id="donotscrollthis">Not scrolling title</h1>
-    <!-- ↓↓↓scrolling contents↓↓↓ -->
-    <div class="contents">
-        <p>texts</p>
+    <!-- ↓↓↓elements don't need to scroll↓↓↓ -->
+    <div class="topbar">
+        <h1>Fixed header</h1>
+    </div>
+    <!-- ↓↓↓create wrapper and wrap scrolling contents into it↓↓↓ -->
+    <div class="smooth-content">
+        <!-- ↓↓↓elements need to scroll↓↓↓ -->
+        <div class="article">
+            <p>scrolling contents</p>
+        </div>
     </div>
 </body>
 ```
@@ -54,9 +80,9 @@ In HTML file, add ```id="donotscrollthis"``` into elements you don't want to scr
 |name|default value|effect|
 |:---|:---:|:---:|
 |scrollStepDuration|```1```|Smooth scrolling effect duration per step (in seconds)|
-|bezier|```.06 , .08 , 0 , .91```|Smooth scrolling Bezier curve value (⚠️ If you don't know what this is, just don't touch it)|
+|bezier|```.35 , .73 , .69 , 1```|Smooth scrolling Bezier curve value (⚠️ If you don't know what this is, just don't touch it)|
 ### Customize back-to-top button
->⚠️We suggest using SmooScroll's back-to-top button to prevent button failure caused by conflicting working modes
+>⚠️If ```lite``` version doesn't compatible with your back-to-top button, please switch to non lite version and use SmooScroll's back-to-top button instead.
 
 #### Customize ```const config``` in the head of SmooScroll, reference:
 |name|default value|effect|
