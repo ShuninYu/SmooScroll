@@ -26,7 +26,7 @@ Unlike Lenis, SmooScroll' s smooth scrolling effect is decoupled from the scroll
 # Choose a version
 >SmooScroll has 4 different versions, you can chose the version you need.
 
-|version suffix|auto pack whole page|has go-to-top button|
+|version suffix|auto wrap whole page|has go-to-top button|
 |:---|:---:|:---:|
 |auto|✅|✅|
 |auto-lite|✅|❌|
@@ -36,7 +36,7 @@ Unlike Lenis, SmooScroll' s smooth scrolling effect is decoupled from the scroll
 >As you can see, these four versions are different combinds of auto/manual/lite, watch explanations below.
 
 ### auto
-Version with suffix ```auto``` will automatically wrap the entire page into the SmooScroll container, making it suitable for pages without any fixed (```position: fixed;```) elements realative to the browser window (such as navigator, buttons, etc.).<br>This version is really easy to deploy, just need to add SmooScroll into your page and do some simple modifications.<br>If you use ```auto-lite``` version, you only need to add SmooScroll and it will work!
+Version with suffix ```auto``` will automatically wrap the entire page into the SmooScroll container, making it suitable for pages without any fixed (```position: fixed;```) elements realative to the browser window (such as top bar, buttons, etc.).<br>This version is really easy to deploy, just need to add SmooScroll into your page and do some simple modifications.<br>If you use ```auto-lite``` version, you only need to add SmooScroll and it will work!
 
 ### manual
 Version with suffix ```manual``` needs you to wrap the contents manualy. Create a SmooScroll container (```<div class="smooth-content"></div>```) and wrap contents-you-want-to-scroll into it. This version suits pages that have fixed (```position: fixed;```) elements realative to the browser window (such as navigator, buttons, etc.).<br>Don't worry about forgetting to wrap the contents, SmooScroll will warn you every time you refresh the page if you forgot to create the SmooScroll container.
