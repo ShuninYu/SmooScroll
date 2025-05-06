@@ -42,7 +42,7 @@ Version with suffix ```auto``` will automatically wrap the entire page into the 
 Version with suffix ```manual``` needs you to wrap the contents manualy. Create a SmooScroll container (```<div class="smooth-content"></div>```) and wrap contents-you-want-to-scroll into it. This version suits pages that have fixed (```position: fixed;```) elements realative to the browser window (such as top bar, buttons, etc.).<br>Don't worry about forgetting to wrap the contents, SmooScroll will warn you every time you refresh the page if you forgot to create the SmooScroll container.
 
 ### lite
-Version with suffix ```lite``` doesn't has SmooScroll back-to-top button. If your page already has a back-to-top button and it still woks fine after deploying the ```lite``` version of SmooScroll, then you can use the ```lite``` version with confidence.<br>If youe back-to-top button doesn't works fine after deploying the ```lite``` version of SmooScroll, it is reecommended to use the non lite version.
+Version with suffix ```lite``` doesn't has SmooScroll back-to-top button. If your page already has a back-to-top button and it still woks fine after deploying the ```lite``` version of SmooScroll, then you can use the ```lite``` version with confidence.<br>If your back-to-top button doesn't works fine after deploying the ```lite``` version of SmooScroll, it is reecommended to use the non lite version.
 
 ---
 ## How to use
