@@ -80,7 +80,7 @@ Add ```<div class="smooth-content"></div>``` into your HTML, and wrap all the co
 |name|default value|effect|
 |:---|:---:|:---:|
 |scrollStepDuration|```1```|Smooth scrolling effect duration per step (in seconds)|
-|bezier|```.35 , .73 , .69 , 1```|Smooth scrolling Bezier curve value (⚠️ If you don't know what this is, just don't touch it)|
+|bezier|```.35 , .73 , .69 , 1```|Smooth scrolling Bezier curve value (⚠️ If you don't know what this is, just leave it as default)|
 ### Customize back-to-top button
 >⚠️If ```lite``` version doesn't compatible with your back-to-top button, please switch to non lite version and use SmooScroll's back-to-top button instead.
 
