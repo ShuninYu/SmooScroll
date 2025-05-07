@@ -1,7 +1,7 @@
 /*
 SmooScroll.js
 Author 孤灯从流ShuninYu @https://github.com/ShuninYu
-version auto lite 1.1.1
+version 1.1.2 manual lite
 */
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -43,6 +43,8 @@ document.addEventListener('DOMContentLoaded', function () {
         document.head.appendChild(styleTag);
     })();
 
+    document.body.appendChild(document.createElement('div')).id = 'gotop';
+
     let viewbox = document.getElementsByClassName("scroll-container")[0];
     if (!viewbox) {
         var newElement2 = document.createElement('div');
@@ -57,16 +59,12 @@ document.addEventListener('DOMContentLoaded', function () {
         viewbox.appendChild(scrollbox);
     }
     else if (!scrollbox) {
-        var newElement = document.createElement('div');
-        newElement.className = 'smooth-content';
-        newElement2.id = 'smooth-content';
-        viewbox.appendChild(newElement);
-        scrollbox = document.getElementsByClassName("smooth-content")[0];
+        alert("没有检测到smooth-content！\n页面效果无法生效！\n请参考官方文档在HTML中添加smooth-conten包裹层\n或者更换为自动部署版本的SmooScroll！");
     }
 
     const bodyChildren = Array.from(document.body.children);
     const elementsToMove = bodyChildren.filter(child => {
-        return child !== viewbox && child !== scrollbox && child !== gotop;
+        return child !== viewbox && child == scrollbox && child !== gotop;
     });
 
     elementsToMove.forEach(element => {

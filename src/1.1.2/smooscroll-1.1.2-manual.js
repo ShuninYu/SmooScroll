@@ -1,7 +1,7 @@
 /*
 SmooScroll.js
 Author 孤灯从流ShuninYu @https://github.com/ShuninYu
-version manual 1.1.1
+version 1.1.2 manual
 */
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const bodyChildren = Array.from(document.body.children);
     const elementsToMove = bodyChildren.filter(child => {
-        return child !== viewbox && child !== scrollbox && child !== gotop;
+        return child !== viewbox && child == scrollbox && child !== gotop;
     });
 
     elementsToMove.forEach(element => {
