@@ -1,7 +1,7 @@
 /*
 SmooScroll.js
 Author 孤灯从流ShuninYu @https://github.com/ShuninYu
-version auto 1.1.0
+version auto 1.1.1
 */
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -81,8 +81,10 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     let scrollbox = document.getElementsByClassName("smooth-content")[0];
-    viewbox.appendChild(scrollbox);
-    if (!scrollbox) {
+    if (scrollbox) {
+        viewbox.appendChild(scrollbox);
+    }
+    else if (!scrollbox) {
         var newElement = document.createElement('div');
         newElement.className = 'smooth-content';
         newElement2.id = 'smooth-content';

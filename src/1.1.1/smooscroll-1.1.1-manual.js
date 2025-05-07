@@ -1,7 +1,7 @@
 /*
 SmooScroll.js
 Author 孤灯从流ShuninYu @https://github.com/ShuninYu
-version 1.0.0
+version manual 1.1.1
 */
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
         bezier: ".35 , .73 , .69 , 1", // 平滑滚动的贝塞尔曲线值（如果你不知道这是什么，那别动它就完事了）
 
         //回到顶部按钮配置
-        buttonImage: "/image/Button_Duck_GoToTop.png",  // 按钮图片路径
+        buttonImage: "../smooscroll-logo.svg",  // 按钮图片路径
         renderStyle: "normal", // 如果你的按钮图片是原尺寸像素图 改为pixelated
         buttonWidth: "90px", // 按钮宽度
         buttonHeight: "90px", // 按钮高度
@@ -81,12 +81,11 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     let scrollbox = document.getElementsByClassName("smooth-content")[0];
-    if (!scrollbox) {
-        var newElement = document.createElement('div');
-        newElement.className = 'smooth-content';
-        newElement2.id = 'smooth-content';
-        viewbox.appendChild(newElement);
-        scrollbox = document.getElementsByClassName("smooth-content")[0];
+    if (scrollbox) {
+        viewbox.appendChild(scrollbox);
+    }
+    else if (!scrollbox) {
+        alert("没有检测到smooth-content！\n页面效果无法生效！\n请参考官方文档在HTML中添加smooth-conten包裹层\n或者更换为自动部署版本的SmooScroll！");
     }
 
     const bodyChildren = Array.from(document.body.children);
