@@ -74,14 +74,14 @@ Add ```<div class="smooth-content"></div>``` into your HTML, and wrap all the co
     </div>
 </body>
 ```
-### Adjust scrolling effect
+### Adjust scrolling effect (All versions)
 #### Customize ```const config``` in the head of SmooScroll, reference:
 
 |name|default value|effect|
 |:---|:---:|:---:|
 |scrollStepDuration|```1```|Smooth scrolling effect duration per step (in seconds)|
 |bezier|```.35 , .73 , .69 , 1```|Smooth scrolling Bezier curve value (⚠️ If you don't know what this is, just leave it as default)|
-### Customize back-to-top button
+### Customize back-to-top button (Non lite versions only)
 >⚠️If ```lite``` version doesn't compatible with your back-to-top button, please switch to non lite version and use SmooScroll's back-to-top button instead.
 
 #### Customize ```const config``` in the head of SmooScroll, reference:
