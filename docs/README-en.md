@@ -52,7 +52,7 @@ Version with suffix ```lite``` doesn't has SmooScroll back-to-top button. If you
 #### 2.Import SmooScroll in HTML document
 ```html
 <!--Remember to change the path and filename with yours-->
-<script src="your/path/to/smooscroll-1.1.0-auto-lite.js"></script>
+<script src="your/path/to/smooscroll-1.1.1-auto-lite.js"></script>
 ```
 ⚠️Please remind the filename, different version has different filename
 ## Then, Set up SmooScroll
