@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>SmooScroll 平滑滚动页面 | Smooth your scroll</title>
+    <link rel="icon" href="https://ik.imagekit.io/shunin/SmooScroll/smooscroll-logo.svg">
+    <link rel="stylesheet" href="../basic.css">
+    <script src="../smooscroll-1.1.2-auto.js"></script>
+    <link rel="stylesheet" href="../monokai.min.css">
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</head>
+
+<body>
+    <div style="position: relative; text-align: center;">
+        <img src="https://ik.imagekit.io/shunin/SmooScroll/smooscroll-logo.svg"
+            style="width: 10vw; margin-top: 3vw;min-width: 190px;" class="logo">
+        <div style="margin-top: 2em; margin-bottom: 1em;">
+            <div style="z-index: 1; display: inline-block; margin-right: -1.7em;">
+                <h1 style="display: inline-block;">S</h1><h2 style=" display: inline-block;">moo</h2><h2 style="display: inline-block; color: rgb(170, 170, 170);">th</h2>
+            </div>
+            <div style="z-index: 2; display: inline-block;">
+                <h1 style="display: inline-block; color: rgb(0, 0, 0);">S</h1><h2 style=" display: inline-block;">croll</h2>
+            </div>
+            <p style="font-size: larger; font-weight: bold; margin-bottom: 2em;">基于默认滚动条的平滑滚动JS<br>平滑滚动页面 | Smooth your scroll</p>
+        </div>
+
+        <div class="navbar">
+            <a href="https://shuninyu.github.io/SmooScroll/sample">
+                <div class="navbutton">
+                    <svg fill="#ffffff" width="6vw" viewBox="-4.5 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>home</title> <path d="M19.469 12.594l3.625 3.313c0.438 0.406 0.313 0.719-0.281 0.719h-2.719v8.656c0 0.594-0.5 1.125-1.094 1.125h-4.719v-6.063c0-0.594-0.531-1.125-1.125-1.125h-2.969c-0.594 0-1.125 0.531-1.125 1.125v6.063h-4.719c-0.594 0-1.125-0.531-1.125-1.125v-8.656h-2.688c-0.594 0-0.719-0.313-0.281-0.719l10.594-9.625c0.438-0.406 1.188-0.406 1.656 0l2.406 2.156v-1.719c0-0.594 0.531-1.125 1.125-1.125h2.344c0.594 0 1.094 0.531 1.094 1.125v5.875z"></path> </g></svg>
+                    <div class="navtext" style="margin-left: 0; padding-right: 1vw;">
+                        <div><p style="font-size: 1.7vw;">网站首页</p></div>
+                        <div><p style="font-size: 1vw; text-transform: uppercase;">homepage</p></div>
+                    </div>
+                </div>
+            </a>
+            <a href="https://shuninyu.github.io/SmooScroll/sample">
+                <div class="navbutton">
+                    <svg fill="#ffffff" width="5vw" viewBox="0 0 419.931 419.931" xml:space="preserve" stroke="#ffffff">
+                        <path d="M282.895,352.367c-2.176-1.324-4.072-3.099-5.579-5.25c-0.696-0.992-1.284-2.041-1.771-3.125H28.282V100.276h335.624 v159.138c7.165,0.647,13.177,5.353,15.701,11.797c2.235-1.225,4.726-1.982,7.344-2.213c1.771-0.154,3.53-0.044,5.236,0.293 V39.561c0-12.996-10.571-23.569-23.566-23.569H23.568C10.573,15.992,0,26.565,0,39.561v309.146 c0,12.996,10.573,23.568,23.568,23.568h257.179c-2.007-4.064-2.483-8.652-1.302-13.066 C280.126,356.67,281.304,354.354,282.895,352.367z M338.025,55.569c0-4.806,3.896-8.703,8.702-8.703h8.702 c4.807,0,8.702,3.896,8.702,8.703v9.863c0,4.806-3.896,8.702-8.702,8.702h-8.702c-4.807,0-8.702-3.896-8.702-8.702V55.569z M297.56,55.569c0-4.806,3.896-8.703,8.702-8.703h8.703c4.807,0,8.702,3.896,8.702,8.703v9.863c0,4.806-3.896,8.702-8.702,8.702 h-8.703c-4.806,0-8.702-3.896-8.702-8.702V55.569z M257.094,55.569c0-4.806,3.897-8.703,8.702-8.703h8.702 c4.807,0,8.703,3.896,8.703,8.703v9.863c0,4.806-3.896,8.702-8.703,8.702h-8.702c-4.805,0-8.702-3.896-8.702-8.702V55.569z"></path>
+                        <path d="M419.875,335.77l-2.615-14.83c-0.353-1.997-2.256-3.331-4.255-2.979l-13.188,2.324c-1.583-3.715-3.605-7.195-6.005-10.38 l8.614-10.268c0.626-0.744,0.931-1.709,0.847-2.68c-0.086-0.971-0.554-1.867-1.3-2.494l-11.534-9.68 c-0.746-0.626-1.713-0.93-2.683-0.845c-0.971,0.085-1.867,0.552-2.493,1.298l-8.606,10.26c-3.533-1.8-7.312-3.188-11.271-4.104 v-13.392c0-2.028-1.645-3.674-3.673-3.674h-15.06c-2.027,0-3.673,1.646-3.673,3.674v13.392 c-3.961,0.915-7.736,2.304-11.271,4.104l-8.608-10.259c-1.304-1.554-3.62-1.756-5.175-0.453l-11.535,9.679 c-0.746,0.627-1.213,1.523-1.299,2.494c-0.084,0.971,0.22,1.937,0.846,2.683l8.615,10.266c-2.396,3.184-4.422,6.666-6.005,10.38 l-13.188-2.325c-1.994-0.351-3.901,0.982-4.255,2.979l-2.614,14.83c-0.169,0.959,0.05,1.945,0.607,2.744 c0.561,0.799,1.41,1.342,2.37,1.511l13.198,2.326c0.215,4.089,0.927,8.045,2.073,11.812l-11.6,6.695 c-0.844,0.485-1.459,1.289-1.712,2.229c-0.252,0.941-0.119,1.943,0.367,2.787l7.529,13.041c0.485,0.844,1.289,1.459,2.229,1.711 c0.313,0.084,0.632,0.125,0.951,0.125c0.639,0,1.272-0.166,1.836-0.492l11.609-6.703c2.73,2.925,5.812,5.517,9.18,7.709 l-4.584,12.593c-0.332,0.916-0.289,1.926,0.123,2.809s1.157,1.566,2.072,1.898l14.148,5.149c0.406,0.148,0.832,0.224,1.257,0.224 c0.53,0,1.063-0.115,1.554-0.345c0.883-0.411,1.564-1.157,1.897-2.073l4.583-12.593c1.965,0.238,3.965,0.361,5.994,0.361 s4.029-0.125,5.994-0.361l4.584,12.593c0.332,0.916,1.016,1.662,1.897,2.073c0.49,0.229,1.021,0.345,1.554,0.345 c0.424,0,0.85-0.074,1.256-0.224l14.15-5.149c0.913-0.332,1.659-1.017,2.07-1.898c0.412-0.883,0.456-1.893,0.123-2.809 l-4.584-12.591c3.365-2.192,6.447-4.786,9.18-7.709l11.609,6.703c0.563,0.324,1.197,0.492,1.836,0.492 c0.318,0,0.64-0.043,0.951-0.125c0.941-0.252,1.743-0.869,2.229-1.711l7.529-13.043c0.486-0.842,0.619-1.846,0.367-2.787 c-0.253-0.938-0.868-1.742-1.712-2.229l-11.598-6.693c1.146-3.768,1.856-7.724,2.071-11.812l13.198-2.327 c0.96-0.169,1.812-0.712,2.37-1.511C419.825,337.715,420.044,336.729,419.875,335.77z M354.184,359.336 c-11.155,0-20.2-9.045-20.2-20.201s9.046-20.2,20.2-20.2c11.156,0,20.201,9.044,20.201,20.2S365.34,359.336,354.184,359.336z"></path>
+                        <path d="M164.695,235.373c0-4.752-2.785-9.117-7.096-11.119l-39.455-18.332l39.456-18.334c4.31-2.004,7.095-6.368,7.095-11.118 v-0.319c0-4.21-2.119-8.075-5.665-10.334c-1.962-1.253-4.247-1.916-6.606-1.916c-1.778,0-3.563,0.391-5.16,1.133l-63.078,29.333 c-4.309,2.004-7.092,6.368-7.092,11.117v0.877c0,4.743,2.782,9.104,7.093,11.118l63.084,29.336 c1.631,0.755,3.368,1.138,5.162,1.138c2.338,0,4.616-0.664,6.597-1.924c3.548-2.268,5.666-6.13,5.666-10.335L164.695,235.373 L164.695,235.373z"></path>
+                        <path d="M226.932,134.012c-2.301-3.15-6.002-5.03-9.901-5.03h-0.314c-5.354,0-10.048,3.425-11.679,8.516L163.478,266.27 c-1.183,3.718-0.517,7.813,1.781,10.962c2.301,3.148,6.002,5.029,9.901,5.029h0.315c5.352,0,10.043-3.426,11.672-8.516 l41.555-128.762C229.896,141.268,229.234,137.167,226.932,134.012z"></path> <path d="M308.001,194.366l-63.079-29.333c-1.592-0.74-3.374-1.131-5.152-1.131c-2.358,0-4.644,0.661-6.605,1.912 c-3.552,2.263-5.671,6.127-5.671,10.337v0.319c0,4.746,2.783,9.111,7.097,11.123l39.454,18.33l-39.455,18.331 c-4.311,2.002-7.096,6.367-7.096,11.119v0.321c0,4.205,2.119,8.066,5.669,10.336c1.974,1.258,4.254,1.923,6.595,1.923 c1.792,0,3.527-0.383,5.169-1.141l63.082-29.336c4.307-2.009,7.088-6.371,7.088-11.114v-0.877 C315.094,200.735,312.311,196.371,308.001,194.366z"></path>
+                    </svg>
+                    <div class="navtext">
+                        <div><p style="font-size: 1.7vw;">示例网页</p></div>
+                        <div><p style="font-size: 1vw; text-transform: uppercase;">sample<br>page</p></div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        
+        <div class="showtext">
+            <p>部署指南<br>deployment guide</p>
+        </div>
+
+        <div class="container2">
+            <h1 style="padding-top: 3vw; padding-bottom: 1vw;">选择SmooScroll类型</h1>
+            <h3 style="padding-bottom: 1vw;">在部署前，选择适合你页面的SmooScroll类型是很重要的！</h3>
+            <h2 style="background-color: rgb(89, 220, 224); margin-bottom: 1vw;">如果你只需要让你页面所有内容都平滑滚动<br>auto-lite 就是你的不二之选<p style="font-size: 0.8vw; font-weight: lighter;">*页面内没有 position: fixed 的元素</p></h2>
+            <p style="width: 36vw; margin: 0 auto; padding-bottom: 1vw;">
+                请使用最新版本的SmooScroll，避免旧版本的bug影响效果。<br>
+                SmooScroll目前有四个细分类型，请根据需要选择。
+            </p>
+            <p style="width: 30vw; margin: 0 auto; padding-top: 1vw;">
+                下面是一个思维导图，帮助你按照思路来寻找适合你的版本：
+            </p>
+            <div style="border: solid 0.2vw white; width: fit-content; height: fit-content; margin: 1vw auto; padding: 0.4vw;">
+                你的网页是否有固定元素？<br>
+                例如：<a href="https://shuninyu.github.io/SmooScroll/sample" target="_blank" style="background-color: rgb(0, 112, 112); color: white; text-decoration: none;">示例页</a>右上角的盒子<br>
+                ↙有　　　　　没有↘
+            </div>
+            <div>
+                <div style="display: inline-block; border: solid 0.2vw white; width: fit-content; height: fit-content; margin: 0 2vw; padding: 0.4vw;">
+                    你的网页是否已有<br>回到顶部按钮？<br>
+                    ↓ 有　　　没有 ↓
+                </div>
+                <div style="display: inline-block;border: solid 0.2vw white; width: fit-content; height: fit-content; margin: 0 2vw; padding: 0.4vw;">
+                    你的网页是否已有<br>回到顶部按钮？<br>
+                    ↓ 有　　　没有 ↓
+                </div>
+            </div>
+            <div>
+                <div style="display: inline-block;border: solid 0.2vw white; width: fit-content; height: fit-content; margin: 1vw 0; padding: 0.4vw;">
+                    manual<br>
+                    版本
+                </div>
+                <div style="display: inline-block;border: solid 0.2vw white; width: fit-content; height: fit-content; margin: 1vw 1vw; padding: 0.4vw;">
+                    manual-lite<br>
+                    版本
+                </div>
+                <div style="display: inline-block;border: solid 0.2vw white; width: fit-content; height: fit-content; margin: 1vw 1vw; padding: 0.4vw;">
+                    auto<br>
+                    版本
+                </div>
+                <div style="display: inline-block;border: solid 0.2vw white; width: fit-content; height: fit-content; margin: 1vw 1vw; padding: 0.4vw;">
+                    auto-lite<br>
+                    版本
+                </div>
+            </div>
+            <p style="width: 30vw; margin: 0 auto; padding-bottom: 1vw;">
+                下面是一个简单的类型对照表，供你快速参考：
+            </p>
+            <table style="border: solid 0.2vw white; margin: 0 auto;">
+                <tr>
+                    <th>版本后缀</td>
+                    <th>自动包裹全部页面</td>
+                    <th>自带回到顶部按钮</td>
+                </tr>
+                <tr>
+                    <td>auto</td>
+                    <td>✅</td>
+                    <td>✅</td>
+                </tr>
+                <tr>
+                    <td>auto-lite</td>
+                    <td>✅</td>
+                    <td>❌</td>
+                </tr>
+                <tr>
+                    <td>manual</td>
+                    <td>❌</td>
+                    <td>✅</td>
+                </tr>
+                <tr>
+                    <td>manual-lite</td>
+                    <td>❌</td>
+                    <td>✅</td>
+                </tr>
+            </table>
+            <p style="width: 30vw; margin: 0 auto; padding: 1vw 0;">
+                可以看出，四个版本就是 auto、manual 和 lite 的不同组合，<br>
+                下面会更详细的解释这三个后缀的含义。
+            </p>
+            <h2 style="margin-top: 1vw;">auto</h2>
+            <p style="width: 30vw; margin: 0 auto; padding: 1vw 0; text-align: left;">
+                带有auto的版本会自动将整个页面内容包裹进SmooScroll容器，适合没有任何相对浏览器窗口固定位置（position: fixed;）的元素（比如固定的导航栏、按钮等）的页面。<br>
+                这个版本的部署非常简单，只需要引入SmooScroll并做一些参数修改即可生效。<br>
+                如果是auto-lite版本，你甚至只需要引入SmooScroll就可以了！
+            </p>
+            <h2 style="margin-top: 1vw;">manual</h2>
+            <p style="width: 30vw; margin: 0 auto; padding: 1vw 0; text-align: left;">
+                带有manual的版本需要你手动将页面内需要平滑滚动的内容包裹进SmooScroll容器中，适合页面内有相对浏览器窗口固定位置（position: fixed;）的元素（比如固定的导航栏、按钮等）的页面。<br>
+                不用担心自己会忘记添加包裹层，如果你没有创建包裹层，SmooScroll会在页面刷新时提醒你。
+            </p>
+            <h2 style="margin-top: 1vw;">lite</h2>
+            <p style="width: 30vw; margin: 0 auto; text-align: left; padding-top: 1vw; padding-bottom: 3vw;">
+                带有lite的版本不包含SmooScroll的回到顶部按钮，如果你的页面已经有了回到顶部按钮，且部署了lite版本以后这个按钮仍然完美工作，那么就可以放心的使用lite版本。<br>
+                如果使用lite版本的SmooScroll以后，你的回到顶部按钮失效了，那么建议使用不带lite的版本。
+            </p>
+        </div>
+
+        <div class="container2">
+            <h1 style="padding-top: 3vw; padding-bottom: 1vw;">添加SmooScroll到你的网页</h1>
+            <p style="width: 30vw; margin: 0 auto; padding-bottom: 2vw;">
+                目前有两种方式可以部署SmooScroll：
+            </p>
+            <h2 style="padding-bottom: 1vw;">1. CDN部署（仅 auto-lite 版本）</h2>
+            <p style="width: 30vw; margin: 0 auto; padding-bottom: 1vw;">
+                <a style="background-color: rgb(70, 139, 141);">auto-lite</a> 版本的部署非常简单，只需要添加下面的代码到<br>
+                &lt;head>内即可！不需要任何其他操作即可使SmooScroll生效！<br>
+                （该CDN链接为最新版本，请放心复制）
+            </p>
+            <pre><code class="language-html" style="text-align: left;">&lt;script src="https://cdn.jsdelivr.net/gh/ShuninYu/SmooScroll@v1.1.2/src/1.1.2/smooscroll-1.1.2-auto-lite.js">&lt;/script></code></pre>
+            <p>*如果需要调整滚动效果，请使用本地部署</p>
+            <h2 style="padding-top: 2vw; padding-bottom: 1vw;">2. 本地部署（适合所有版本）</h2>
+            <h3 style="padding-top: 1vw; padding-bottom: 1vw;">① 下载SmooScroll并存储在你的网站目录中</h3>
+            <h2 style="padding: 1vw 0; background-color: rgb(89, 220, 224);">SmooScroll is on GitHub</h2>
+            <a href="https://github.com/ShuninYu/SmooScroll/releases" target="_blank" style="color: white;">
+                <svg aria-hidden="true" viewBox="0 0 24 24" version="1.1" width="5vw" data-view-component="true" style="margin-top: 1vw;">
+                    <path fill="white" d="M12 1C5.9225 1 1 5.9225 1 12C1 16.8675 4.14875 20.9787 8.52125 22.4362C9.07125 22.5325 9.2775 22.2025 9.2775 21.9137C9.2775 21.6525 9.26375 20.7862 9.26375 19.865C6.5 20.3737 5.785 19.1912 5.565 18.5725C5.44125 18.2562 4.905 17.28 4.4375 17.0187C4.0525 16.8125 3.5025 16.3037 4.42375 16.29C5.29 16.2762 5.90875 17.0875 6.115 17.4175C7.105 19.0812 8.68625 18.6137 9.31875 18.325C9.415 17.61 9.70375 17.1287 10.02 16.8537C7.5725 16.5787 5.015 15.63 5.015 11.4225C5.015 10.2262 5.44125 9.23625 6.1425 8.46625C6.0325 8.19125 5.6475 7.06375 6.2525 5.55125C6.2525 5.55125 7.17375 5.2625 9.2775 6.67875C10.1575 6.43125 11.0925 6.3075 12.0275 6.3075C12.9625 6.3075 13.8975 6.43125 14.7775 6.67875C16.8813 5.24875 17.8025 5.55125 17.8025 5.55125C18.4075 7.06375 18.0225 8.19125 17.9125 8.46625C18.6138 9.23625 19.04 10.2125 19.04 11.4225C19.04 15.6437 16.4688 16.5787 14.0213 16.8537C14.42 17.1975 14.7638 17.8575 14.7638 18.8887C14.7638 20.36 14.75 21.5425 14.75 21.9137C14.75 22.2025 14.9563 22.5462 15.5063 22.4362C19.8513 20.9787 23 16.8537 23 12C23 5.9225 18.0775 1 12 1Z"/>
+                </svg>
+                <p style="margin-bottom: 2vw;">Get SmooScroll from GitHub</p>
+            </a>
+            <h2 style="padding: 1vw 0; background-color: rgb(89, 220, 224);">Gitee (中国内地)</h2>
+            <a href="https://gitee.com/shuninyu/SmooScroll" target="_blank" style="color: white;">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="5vw" style="margin-top: 1vw;">
+                    <path fill="white" d="M512 1024C229.222 1024 0 794.778 0 512S229.222 0 512 0s512 229.222 512 512-229.222 512-512 512zm259.149-568.883h-290.74a25.293 25.293 0 0 0-25.292 25.293l-.026 63.206c0 13.952 11.315 25.293 25.267 25.293h177.024c13.978 0 25.293 11.315 25.293 25.267v12.646a75.853 75.853 0 0 1-75.853 75.853h-240.23a25.293 25.293 0 0 1-25.267-25.293V417.203a75.853 75.853 0 0 1 75.827-75.853h353.946a25.293 25.293 0 0 0 25.267-25.292l.077-63.207a25.293 25.293 0 0 0-25.268-25.293H417.152a189.62 189.62 0 0 0-189.62 189.645V771.15c0 13.977 11.316 25.293 25.294 25.293h372.94a170.65 170.65 0 0 0 170.65-170.65V480.384a25.293 25.293 0 0 0-25.293-25.267z"/>
+                </svg>
+                <p>从Gitee获取SmooScroll</p>
+            </a>
+            <p style="padding-top: 0.4vw; font-size: 0.8vw;">
+                *由于Gitee平台限制，SmooScroll的Gitee仓库不提供release，<br>
+                请下载仓库源码ZIP自行提取需要的版本，或者在预览页复制源码。<br>
+                SmooScroll的Gitee仓库只是GitHub仓库的镜像，不保证与GitHub仓库同步更新。
+            </p>
+            <h3 style="padding-top: 2vw; padding-bottom: 1vw;">② 在HTML文件中引入你下载的 SmooScroll JavaScript</h3>
+            <pre><code class="language-html" style="text-align: left;">&lt;!--记得替换路径和文件名为你自己的路径和对应版本文件名-->
+&lt;script src="your/path/to/smooscroll-1.1.2-auto-lite.js">&lt;/script></code></pre>
+            <p style="padding-top: 1vw;">⚠️请注意文件名称，不同版本会有不同的文件名。</p>
+            <h3 style="padding-top: 2vw; padding-bottom: 1vw;">③ 创建包裹层（仅 manual 版本）</h3>
+            <p style="padding-bottom: 1vw;">在&lt;body>中添加</p>
+            <pre><code class="language-html">&lt;div class="smooth-content">&lt;/div></code></pre>
+            <p style="padding-top: 1vw; padding-bottom: 1vw;">并将所有需要滚动的内容包裹进这个div内，例如：</p>
+            <pre><code class="language-html" style="text-align: left;">&lt;body>
+    &lt;!-- ↓↓↓不需要滚动的元素↓↓↓ -->
+    &lt;div class="topbar">
+        &lt;h1>固定的标题</h1>
+    &lt;/div>
+    &lt;!-- ↓↓↓创建包裹层并将需要滚动的内容包裹进去↓↓↓ -->
+    &lt;div class="smooth-content">
+        &lt;!-- ↓↓↓需要滚动的元素↓↓↓ -->
+        &lt;div class="article">
+            &lt;p>需要滚动的内容</p>
+        &lt;/div>
+    &lt;/div>
+&lt;/body></code></pre>
+            <p style="padding-top: 1vw;">这样，SmooScroll就成功的部署在你的网页里了。</p>
+            <p style="padding-top: 1vw;">接下来就是修改SmooScroll的配置，来自定义你的平滑滚动体验。</p>
+            <p style="padding-bottom: 3vw; font-size: 0.8vw;">
+                *非 lite 版本需要设置按钮图片才能让回到顶部按钮生效。
+            </p>
+        </div>
+
+        <div class="container2">
+            <h1 style="padding-top: 3vw; padding-bottom: 1vw;">修改SmooScroll配置</h1>
+            <p>
+                SmooScroll支持通过修改参数来自定义平滑滚动效果，<br>
+                并且非 <a style="background-color: rgb(70, 139, 141);">lite</a> 版本的回到顶部按钮可以自定义样式！
+            </p>
+            <h2 style="padding-top: 2vw; padding-bottom: 2vw;">调整滚动效果（所有版本通用）</h2>
+            <p style="font-weight: bold; padding-bottom: 0.6vw;">在SmooScroll开头中的 <a style="background-color: rgb(70, 139, 141);">const config</a> 中修改参数，参考：</p>
+            <table style="border: solid 0.2vw white; margin: 0 auto;">
+                <tr>
+                    <th>参数</td>
+                    <th>默认值</td>
+                    <th>效果</td>
+                </tr>
+                <tr>
+                    <td>scrollStepDuration</td>
+                    <td><a style="background-color: rgb(70, 139, 141);">1</a></td>
+                    <td>每步平滑滚动效果时长（单位秒）</td>
+                </tr>
+                <tr>
+                    <td>bezier</td>
+                    <td><a style="background-color: rgb(70, 139, 141);">.35,.73,.69,1</a></td>
+                    <td>平滑滚动的贝塞尔曲线值（⚠️如果你不知道这是什么，那别动它就完事了）</td>
+                </tr>
+            </table>
+            <h2 style="padding-top: 2vw; padding-bottom: 0.6vw;">自定义回到顶部按钮样式（仅非lite版本）</h2>
+            <p style="font-size: 0.8vw;">⚠️如果lite版本和你自己的回到顶部按钮不兼容，<br>请更换成非lite版本使用SmooScroll自带的回到顶部按钮。</p>
+            <p style="margin-top: 1vw;">在SmooScroll开头中的 const config中修改参数，参考：</p>
+            <table style="border: solid 0.2vw white; margin: 0 auto;">
+                <tr>
+                    <th>参数</td>
+                    <th>默认值</td>
+                    <th>效果</td>
+                </tr>
+                <tr>
+                    <td>buttonImage</td>
+                    <td>-</td>
+                    <td>按钮图片路径</td>
+                </tr>
+                <tr>
+                    <td>renderStyle</td>
+                    <td><a style="background-color: rgb(70, 139, 141);">normal</a></td>
+                    <td>如果你的按钮图片是原尺寸像素图，把它改为pixelated，否则不需要改动</td>
+                </tr>
+                <tr>
+                    <td>buttonWidth</td>
+                    <td><a style="background-color: rgb(70, 139, 141);">90px</a></td>
+                    <td>按钮的宽度（如果需要按照窗口比例定位可以将单位从px改为vw，即窗口宽度，1vw = 窗口宽度1%）</td>
+                </tr>
+                <tr>
+                    <td>buttonHeight</td>
+                    <td><a style="background-color: rgb(70, 139, 141);">90px</a></td>
+                    <td>按钮的高度，单位也可以改为vw</td>
+                </tr>
+                <tr>
+                    <td>positionRight</td>
+                    <td><a style="background-color: rgb(70, 139, 141);">20px	</a></td>
+                    <td>按钮距离页面窗口右端的距离，单位也可以改为vw</td>
+                </tr>
+                <tr>
+                    <td>positionBottom</td>
+                    <td><a style="background-color: rgb(70, 139, 141);">20px	</a></td>
+                    <td>按钮距离页面窗口底端的距离，单位也可以改为vw</td>
+                </tr>
+                <tr>
+                    <td>showAtPosition</td>
+                    <td><a style="background-color: rgb(70, 139, 141);">80</a></td>
+                    <td>滚动多少像素后回到顶部按钮才会出现</td>
+                </tr>
+            </table>
+            <p style="padding-top: 1vw; padding-bottom: 3vw;">以上就是SmooScroll的部署指南，<br>体验SmooScroll带给网页的平滑滚动效果吧！</p>
+        </div>
+
+        <div class="navbar">
+            <a href="https://shuninyu.github.io/SmooScroll/sample">
+                <div class="navbutton">
+                    <svg fill="#ffffff" width="6vw" viewBox="-4.5 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>home</title> <path d="M19.469 12.594l3.625 3.313c0.438 0.406 0.313 0.719-0.281 0.719h-2.719v8.656c0 0.594-0.5 1.125-1.094 1.125h-4.719v-6.063c0-0.594-0.531-1.125-1.125-1.125h-2.969c-0.594 0-1.125 0.531-1.125 1.125v6.063h-4.719c-0.594 0-1.125-0.531-1.125-1.125v-8.656h-2.688c-0.594 0-0.719-0.313-0.281-0.719l10.594-9.625c0.438-0.406 1.188-0.406 1.656 0l2.406 2.156v-1.719c0-0.594 0.531-1.125 1.125-1.125h2.344c0.594 0 1.094 0.531 1.094 1.125v5.875z"></path> </g></svg>
+                    <div class="navtext" style="margin-left: 0; padding-right: 1vw;">
+                        <div><p style="font-size: 1.7vw;">网站首页</p></div>
+                        <div><p style="font-size: 1vw; text-transform: uppercase;">homepage</p></div>
+                    </div>
+                </div>
+            </a>
+            <a href="https://shuninyu.github.io/SmooScroll/sample">
+                <div class="navbutton">
+                    <svg fill="#ffffff" width="5vw" viewBox="0 0 419.931 419.931" xml:space="preserve" stroke="#ffffff">
+                        <path d="M282.895,352.367c-2.176-1.324-4.072-3.099-5.579-5.25c-0.696-0.992-1.284-2.041-1.771-3.125H28.282V100.276h335.624 v159.138c7.165,0.647,13.177,5.353,15.701,11.797c2.235-1.225,4.726-1.982,7.344-2.213c1.771-0.154,3.53-0.044,5.236,0.293 V39.561c0-12.996-10.571-23.569-23.566-23.569H23.568C10.573,15.992,0,26.565,0,39.561v309.146 c0,12.996,10.573,23.568,23.568,23.568h257.179c-2.007-4.064-2.483-8.652-1.302-13.066 C280.126,356.67,281.304,354.354,282.895,352.367z M338.025,55.569c0-4.806,3.896-8.703,8.702-8.703h8.702 c4.807,0,8.702,3.896,8.702,8.703v9.863c0,4.806-3.896,8.702-8.702,8.702h-8.702c-4.807,0-8.702-3.896-8.702-8.702V55.569z M297.56,55.569c0-4.806,3.896-8.703,8.702-8.703h8.703c4.807,0,8.702,3.896,8.702,8.703v9.863c0,4.806-3.896,8.702-8.702,8.702 h-8.703c-4.806,0-8.702-3.896-8.702-8.702V55.569z M257.094,55.569c0-4.806,3.897-8.703,8.702-8.703h8.702 c4.807,0,8.703,3.896,8.703,8.703v9.863c0,4.806-3.896,8.702-8.703,8.702h-8.702c-4.805,0-8.702-3.896-8.702-8.702V55.569z"></path>
+                        <path d="M419.875,335.77l-2.615-14.83c-0.353-1.997-2.256-3.331-4.255-2.979l-13.188,2.324c-1.583-3.715-3.605-7.195-6.005-10.38 l8.614-10.268c0.626-0.744,0.931-1.709,0.847-2.68c-0.086-0.971-0.554-1.867-1.3-2.494l-11.534-9.68 c-0.746-0.626-1.713-0.93-2.683-0.845c-0.971,0.085-1.867,0.552-2.493,1.298l-8.606,10.26c-3.533-1.8-7.312-3.188-11.271-4.104 v-13.392c0-2.028-1.645-3.674-3.673-3.674h-15.06c-2.027,0-3.673,1.646-3.673,3.674v13.392 c-3.961,0.915-7.736,2.304-11.271,4.104l-8.608-10.259c-1.304-1.554-3.62-1.756-5.175-0.453l-11.535,9.679 c-0.746,0.627-1.213,1.523-1.299,2.494c-0.084,0.971,0.22,1.937,0.846,2.683l8.615,10.266c-2.396,3.184-4.422,6.666-6.005,10.38 l-13.188-2.325c-1.994-0.351-3.901,0.982-4.255,2.979l-2.614,14.83c-0.169,0.959,0.05,1.945,0.607,2.744 c0.561,0.799,1.41,1.342,2.37,1.511l13.198,2.326c0.215,4.089,0.927,8.045,2.073,11.812l-11.6,6.695 c-0.844,0.485-1.459,1.289-1.712,2.229c-0.252,0.941-0.119,1.943,0.367,2.787l7.529,13.041c0.485,0.844,1.289,1.459,2.229,1.711 c0.313,0.084,0.632,0.125,0.951,0.125c0.639,0,1.272-0.166,1.836-0.492l11.609-6.703c2.73,2.925,5.812,5.517,9.18,7.709 l-4.584,12.593c-0.332,0.916-0.289,1.926,0.123,2.809s1.157,1.566,2.072,1.898l14.148,5.149c0.406,0.148,0.832,0.224,1.257,0.224 c0.53,0,1.063-0.115,1.554-0.345c0.883-0.411,1.564-1.157,1.897-2.073l4.583-12.593c1.965,0.238,3.965,0.361,5.994,0.361 s4.029-0.125,5.994-0.361l4.584,12.593c0.332,0.916,1.016,1.662,1.897,2.073c0.49,0.229,1.021,0.345,1.554,0.345 c0.424,0,0.85-0.074,1.256-0.224l14.15-5.149c0.913-0.332,1.659-1.017,2.07-1.898c0.412-0.883,0.456-1.893,0.123-2.809 l-4.584-12.591c3.365-2.192,6.447-4.786,9.18-7.709l11.609,6.703c0.563,0.324,1.197,0.492,1.836,0.492 c0.318,0,0.64-0.043,0.951-0.125c0.941-0.252,1.743-0.869,2.229-1.711l7.529-13.043c0.486-0.842,0.619-1.846,0.367-2.787 c-0.253-0.938-0.868-1.742-1.712-2.229l-11.598-6.693c1.146-3.768,1.856-7.724,2.071-11.812l13.198-2.327 c0.96-0.169,1.812-0.712,2.37-1.511C419.825,337.715,420.044,336.729,419.875,335.77z M354.184,359.336 c-11.155,0-20.2-9.045-20.2-20.201s9.046-20.2,20.2-20.2c11.156,0,20.201,9.044,20.201,20.2S365.34,359.336,354.184,359.336z"></path>
+                        <path d="M164.695,235.373c0-4.752-2.785-9.117-7.096-11.119l-39.455-18.332l39.456-18.334c4.31-2.004,7.095-6.368,7.095-11.118 v-0.319c0-4.21-2.119-8.075-5.665-10.334c-1.962-1.253-4.247-1.916-6.606-1.916c-1.778,0-3.563,0.391-5.16,1.133l-63.078,29.333 c-4.309,2.004-7.092,6.368-7.092,11.117v0.877c0,4.743,2.782,9.104,7.093,11.118l63.084,29.336 c1.631,0.755,3.368,1.138,5.162,1.138c2.338,0,4.616-0.664,6.597-1.924c3.548-2.268,5.666-6.13,5.666-10.335L164.695,235.373 L164.695,235.373z"></path>
+                        <path d="M226.932,134.012c-2.301-3.15-6.002-5.03-9.901-5.03h-0.314c-5.354,0-10.048,3.425-11.679,8.516L163.478,266.27 c-1.183,3.718-0.517,7.813,1.781,10.962c2.301,3.148,6.002,5.029,9.901,5.029h0.315c5.352,0,10.043-3.426,11.672-8.516 l41.555-128.762C229.896,141.268,229.234,137.167,226.932,134.012z"></path> <path d="M308.001,194.366l-63.079-29.333c-1.592-0.74-3.374-1.131-5.152-1.131c-2.358,0-4.644,0.661-6.605,1.912 c-3.552,2.263-5.671,6.127-5.671,10.337v0.319c0,4.746,2.783,9.111,7.097,11.123l39.454,18.33l-39.455,18.331 c-4.311,2.002-7.096,6.367-7.096,11.119v0.321c0,4.205,2.119,8.066,5.669,10.336c1.974,1.258,4.254,1.923,6.595,1.923 c1.792,0,3.527-0.383,5.169-1.141l63.082-29.336c4.307-2.009,7.088-6.371,7.088-11.114v-0.877 C315.094,200.735,312.311,196.371,308.001,194.366z"></path>
+                    </svg>
+                    <div class="navtext">
+                        <div><p style="font-size: 1.7vw;">示例网页</p></div>
+                        <div><p style="font-size: 1vw; text-transform: uppercase;">sample<br>page</p></div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        
+        <div class="container2">
+            <h1 style="padding-top: 2vw; padding-bottom: 2vw;">获取SmooScroll</h1>
+            <h2 style="padding: 1vw 0; background-color: rgb(89, 220, 224);">SmooScroll is on GitHub</h2>
+            <a href="https://github.com/ShuninYu/SmooScroll" target="_blank" style="color: white;">
+                <svg aria-hidden="true" viewBox="0 0 24 24" version="1.1" width="5vw" data-view-component="true" style="margin-top: 1vw;">
+                    <path fill="white" d="M12 1C5.9225 1 1 5.9225 1 12C1 16.8675 4.14875 20.9787 8.52125 22.4362C9.07125 22.5325 9.2775 22.2025 9.2775 21.9137C9.2775 21.6525 9.26375 20.7862 9.26375 19.865C6.5 20.3737 5.785 19.1912 5.565 18.5725C5.44125 18.2562 4.905 17.28 4.4375 17.0187C4.0525 16.8125 3.5025 16.3037 4.42375 16.29C5.29 16.2762 5.90875 17.0875 6.115 17.4175C7.105 19.0812 8.68625 18.6137 9.31875 18.325C9.415 17.61 9.70375 17.1287 10.02 16.8537C7.5725 16.5787 5.015 15.63 5.015 11.4225C5.015 10.2262 5.44125 9.23625 6.1425 8.46625C6.0325 8.19125 5.6475 7.06375 6.2525 5.55125C6.2525 5.55125 7.17375 5.2625 9.2775 6.67875C10.1575 6.43125 11.0925 6.3075 12.0275 6.3075C12.9625 6.3075 13.8975 6.43125 14.7775 6.67875C16.8813 5.24875 17.8025 5.55125 17.8025 5.55125C18.4075 7.06375 18.0225 8.19125 17.9125 8.46625C18.6138 9.23625 19.04 10.2125 19.04 11.4225C19.04 15.6437 16.4688 16.5787 14.0213 16.8537C14.42 17.1975 14.7638 17.8575 14.7638 18.8887C14.7638 20.36 14.75 21.5425 14.75 21.9137C14.75 22.2025 14.9563 22.5462 15.5063 22.4362C19.8513 20.9787 23 16.8537 23 12C23 5.9225 18.0775 1 12 1Z"/>
+                </svg>
+                <p style="margin-bottom: 2vw;">Get SmooScroll from GitHub</p>
+            </a>
+            <h2 style="padding: 1vw 0; background-color: rgb(89, 220, 224);">Gitee (中国内地)</h2>
+            <a href="https://gitee.com/shuninyu/SmooScroll" target="_blank" style="color: white;">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="5vw" style="margin-top: 1vw;">
+                    <path fill="white" d="M512 1024C229.222 1024 0 794.778 0 512S229.222 0 512 0s512 229.222 512 512-229.222 512-512 512zm259.149-568.883h-290.74a25.293 25.293 0 0 0-25.292 25.293l-.026 63.206c0 13.952 11.315 25.293 25.267 25.293h177.024c13.978 0 25.293 11.315 25.293 25.267v12.646a75.853 75.853 0 0 1-75.853 75.853h-240.23a25.293 25.293 0 0 1-25.267-25.293V417.203a75.853 75.853 0 0 1 75.827-75.853h353.946a25.293 25.293 0 0 0 25.267-25.292l.077-63.207a25.293 25.293 0 0 0-25.268-25.293H417.152a189.62 189.62 0 0 0-189.62 189.645V771.15c0 13.977 11.316 25.293 25.294 25.293h372.94a170.65 170.65 0 0 0 170.65-170.65V480.384a25.293 25.293 0 0 0-25.293-25.267z"/>
+                </svg>
+                <p>从Gitee获取SmooScroll</p>
+            </a>
+            <p style="padding-top: 0.4vw; font-size: 0.8vw;">*由于Gitee平台限制，Gitee仓库不提供release，请自行在仓库src文件夹中下载需要版本或拷贝源码。</p>
+            <h2 style="margin-top: 2vw; padding: 1vw 0; background-color: rgb(89, 220, 224);">或者使用CDN链接快速体验auto-lite版本效果</h2>
+            <pre><code class="language-html" style="text-align: left;">&lt;script src="https://cdn.jsdelivr.net/gh/ShuninYu/SmooScroll@v1.1.2/src/1.1.2/smooscroll-1.1.2-auto-lite.js">&lt;/script></code></pre>
+            <p>在&lt;head>中插入该代码，然后让SmooScroll施展魔法！</p>
+            <p style="font-size: 0.8vw; padding-top: 0.4vw; padding-bottom: 3vw;">*如果你的页面有窗口固定元素，该版本效果可能会“用力过猛”<br>请下载manual版本并根据指南使用（相信我，依然很简单）</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div style="padding: 3vw 20vw 1vw 20vw;">
+            <div class="flexbox">
+                <div class="iconbox">
+                    <div class="icon"></div>
+                    <div class="icontext">SmooScroll</div>
+                </div>
+                <div class="navigate">
+                    <h1>导航</h1>
+                    <a href="https://shuninyu.github.io/SmooScroll/" target="_blank">简介</a>
+                    <a href="https://shuninyu.github.io/SmooScroll/start" target="_blank">指南</a>
+                    <a href="https://shuninyu.github.io/SmooScroll/sample" target="_blank">示例</a>
+                </div>
+                <div class="navigate">
+                    <h1>探索</h1>
+                    <a href="https://shuninyu.github.io/SmooScroll/" target="_blank">仓库(GitHub)</a>
+                    <a href="https://gitee.com/shuninyu/SmooScroll" target="_blank">仓库(Gitee)</a>
+                    <a href="https://github.com/ShuninYu/SmooScroll/releases" target="_blank">归档</a>
+                    <a href="https://github.com/ShuninYu/SmooScroll/blob/main/LICENSE" target="_blank">证书</a>
+                </div>
+                <div class="navigate">
+                    <h1>链接</h1>
+                    <a href="https://blog.shuninyu.fun/p/2025/202503" target="_blank">Blog</a>
+                    <a href="mailto:shuninyu@outlook.com" target="_blank">邮箱</a>
+                </div>
+            </div>
+            <div class="line" style="margin-top: 3vw; margin-bottom: 1vw;"></div>
+            <p>This website uses <a href="https://github.com/ShuninYu/SmooScroll" target="_blank" style="color: rgb(255, 255, 255);">SmooScroll</a>.</p>
+            <p>All rights reserved © 孤灯从流 | ShuninYu</p>
+        </div>
+    </footer>
+</body>
+
+</html>

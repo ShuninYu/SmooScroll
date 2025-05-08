@@ -1,7 +1,7 @@
 /*
 SmooScroll.js
 Author 孤灯从流ShuninYu @https://github.com/ShuninYu
-version 1.0.0
+version 1.1.2 auto
 */
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
         bezier: ".35,.73,.69,1", // 平滑滚动的贝塞尔曲线值（如果你不知道这是什么，那别动它就完事了）
 
         //回到顶部按钮配置
-        buttonImage: "https://ik.imagekit.io/shunin/SmooScroll/BackToTop.svg",  // 按钮图片路径
+        buttonImage: "/top-circle.svg",  // 按钮图片路径
         renderStyle: "normal", // 如果你的按钮图片是原尺寸像素图 改为pixelated
         buttonWidth: "5vw", // 按钮宽度
         buttonHeight: "5vw", // 按钮高度
@@ -81,7 +81,10 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     let scrollbox = document.getElementsByClassName("smooth-content")[0];
-    if (!scrollbox) {
+    if (scrollbox) {
+        viewbox.appendChild(scrollbox);
+    }
+    else if (!scrollbox) {
         var newElement = document.createElement('div');
         newElement.className = 'smooth-content';
         newElement2.id = 'smooth-content';
