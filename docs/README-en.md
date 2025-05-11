@@ -52,7 +52,7 @@ Version with suffix ```lite``` doesn't has SmooScroll back-to-top button. If you
 #### 2.Import SmooScroll in HTML document
 ```html
 <!--Remember to change the path and filename with yours-->
-<script src="your/path/to/smooscroll-1.1.2-auto-lite.js"></script>
+<script src="your/path/to/smooscroll-1.1.3-auto-lite.js"></script>
 ```
 ⚠️Please remind the filename, different version has different filename
 ## Then, Set up SmooScroll
@@ -80,7 +80,7 @@ Add ```<div class="smooth-content"></div>``` into your HTML, and wrap all the co
 |name|default value|effect|
 |:---|:---:|:---:|
 |scrollStepDuration|```1```|Smooth scrolling effect duration per step (in seconds)|
-|bezier|```.35 , .73 , .69 , 1```|Smooth scrolling Bezier curve value (⚠️ If you don't know what this is, just leave it as default)|
+|bezier|```.35 , .73 , .5 , 1```|Smooth scrolling Bezier curve value (⚠️ If you don't know what this is, just leave it as default)|
 ### Customize back-to-top button (Non lite versions only)
 >⚠️If ```lite``` version doesn't compatible with your back-to-top button, please switch to non lite version and use SmooScroll's back-to-top button instead.
 
