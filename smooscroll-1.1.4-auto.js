@@ -1,7 +1,7 @@
 /*
 SmooScroll.js
 Author 孤灯从流ShuninYu @https://github.com/ShuninYu
-version 1.1.2 manual
+version 1.1.4 auto
 */
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const config = {
         //平滑滚动效果配置
         scrollStepDuration: "1",  // 每步平滑滚动效果时长（单位秒）
-        bezier: ".35,.73,.69,1", // 平滑滚动的贝塞尔曲线值（如果你不知道这是什么，那别动它就完事了）
+        bezier: ".35,.73,.5,1", // 平滑滚动的贝塞尔曲线值（如果你不知道这是什么，那别动它就完事了）
 
         //回到顶部按钮配置
         buttonImage: "https://shuninyu.github.io/SmooScroll/top-circle.svg",  // 按钮图片路径
@@ -85,12 +85,16 @@ document.addEventListener('DOMContentLoaded', function () {
         viewbox.appendChild(scrollbox);
     }
     else if (!scrollbox) {
-        alert("没有检测到smooth-content！\n页面效果无法生效！\n请参考官方文档在HTML中添加smooth-conten包裹层\n或者更换为自动部署版本的SmooScroll！");
+        var newElement = document.createElement('div');
+        newElement.className = 'smooth-content';
+        newElement2.id = 'smooth-content';
+        viewbox.appendChild(newElement);
+        scrollbox = document.getElementsByClassName("smooth-content")[0];
     }
 
     const bodyChildren = Array.from(document.body.children);
     const elementsToMove = bodyChildren.filter(child => {
-        return child !== viewbox && child == scrollbox && child !== gotop;
+        return child !== viewbox && child !== scrollbox && child !== gotop;
     });
 
     elementsToMove.forEach(element => {
@@ -104,6 +108,15 @@ document.addEventListener('DOMContentLoaded', function () {
     function scroll() {
         scrollbox.style.transform = `translateY(${-scrollY}px)`;
     };
+
+    // 监控 scrollbox 的尺寸变化
+    const resizeObserver = new ResizeObserver(() => {
+        resize_body(); // 当尺寸变化时更新容器高度
+    });
+
+    // 开始观察 scrollbox
+    resizeObserver.observe(scrollbox);
+    
     window.addEventListener("scroll", scroll);
     window.addEventListener("load", resize_body);
     window.addEventListener("resize", resize_body);
