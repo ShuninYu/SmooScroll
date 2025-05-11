@@ -1,7 +1,7 @@
 /*
 SmooScroll.js
 Author 孤灯从流ShuninYu @https://github.com/ShuninYu
-version 1.1.3 auto lite
+version 1.1.4 auto
 */
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -11,6 +11,15 @@ document.addEventListener('DOMContentLoaded', function () {
         //平滑滚动效果配置
         scrollStepDuration: "1",  // 每步平滑滚动效果时长（单位秒）
         bezier: ".35 , .73 , .5 , 1", // 平滑滚动的贝塞尔曲线值（如果你不知道这是什么，那别动它就完事了）
+
+        //回到顶部按钮配置
+        buttonImage: "../smooscroll-logo.svg",  // 按钮图片路径
+        renderStyle: "normal", // 如果你的按钮图片是原尺寸像素图 改为pixelated
+        buttonWidth: "90px", // 按钮宽度
+        buttonHeight: "90px", // 按钮高度
+        positionRight: "20px", // 按钮定位 距离窗口右侧的宽度
+        positionBottom: "20px", // 按钮定位 距离窗口底部的高度
+        showAtPosition: 80,  // 显示按钮所需要的滚动距离
     };
 
     (function injectStyles() {
@@ -32,6 +41,23 @@ document.addEventListener('DOMContentLoaded', function () {
                 width: 100%;
                 transition: ${config.scrollStepDuration}s cubic-bezier(${config.bezier});
             }
+
+            #gotop{
+                position: fixed;
+                display: none;
+                right: ${config.positionRight};
+                bottom: ${config.positionBottom};
+                z-index: 11111;
+                width: ${config.buttonWidth};
+                height: ${config.buttonHeight};
+                background-image: url("${config.buttonImage}");
+                background-size: contain;
+                image-rendering: ${config.renderStyle};
+            }
+            
+            #gotop:hover{
+                cursor: pointer;
+            }
         `;
 
         if (styleTag.styleSheet) {
@@ -42,6 +68,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
         document.head.appendChild(styleTag);
     })();
+
+    document.body.appendChild(document.createElement('div')).id = 'gotop';
 
     let viewbox = document.getElementsByClassName("scroll-container")[0];
     if (!viewbox) {
@@ -66,7 +94,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const bodyChildren = Array.from(document.body.children);
     const elementsToMove = bodyChildren.filter(child => {
-        return child !== viewbox && child !== scrollbox;
+        return child !== viewbox && child !== scrollbox && child !== gotop;
     });
 
     elementsToMove.forEach(element => {
@@ -80,7 +108,34 @@ document.addEventListener('DOMContentLoaded', function () {
     function scroll() {
         scrollbox.style.transform = `translateY(${-scrollY}px)`;
     };
+
+    // 监控 scrollbox 的尺寸变化
+    const resizeObserver = new ResizeObserver(() => {
+        resize_body(); // 当尺寸变化时更新容器高度
+    });
+
+    // 开始观察 scrollbox
+    resizeObserver.observe(scrollbox);
+    
     window.addEventListener("scroll", scroll);
     window.addEventListener("load", resize_body);
     window.addEventListener("resize", resize_body);
+
+    window.addEventListener("scroll", handleScroll);
+
+    function handleScroll() {
+        var oTop = document.body.scrollTop || document.documentElement.scrollTop;
+        if (oTop >= config.showAtPosition) {
+            gotop.style.display = "block";
+        } else {
+            gotop.style.display = "none";
+        }
+    }
+
+    gotop.onclick = function () {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    };
 });
