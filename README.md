@@ -54,7 +54,7 @@ SmooScroll的效果基于原生滚动条，不会屏蔽默认滚动条或创建�
 #### 2.在HTML文件中引入SmooScroll
 ```html
 <!--记得替换路径和文件名为你自己的路径和对应版本文件名-->
-<script src="your/path/to/smooscroll-1.1.4-auto-lite.js"></script>
+<script src="your/path/to/smooscroll-1.1.4-auto-lite.min.js"></script>
 ```
 ⚠️请注意文件名称，不同版本会有不同的文件名
 ## 二、配置SmooScroll
