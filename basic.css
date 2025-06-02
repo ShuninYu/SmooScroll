@@ -101,11 +101,7 @@ body {
 }
 
 .container:hover {
-    margin-top: 0.5vw;
-    margin-bottom: 0.5vw;
-    left: 24.5vw;
-    width: 51vw;
-    padding: 1vw;
+    transform: scale(105%);
 }
 
 .container2 {
