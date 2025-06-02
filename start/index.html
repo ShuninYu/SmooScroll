@@ -3,12 +3,12 @@
 
 <head>
     <meta charset="utf-8">
-    <title>SmooScroll 平滑滚动页面 | Smooth your scroll</title>
+    <title>部署指南 - SmooScroll 平滑滚动页面 | Smooth your scroll</title>
     <link rel="icon" href="../smooscroll-logo.svg">
     <link rel="stylesheet" href="../basic.css">
     <script src="../smooscroll-1.1.4-auto.js"></script>
     <link rel="stylesheet" href="../monokai.min.css">
-    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
+    <script src="../highlight.min.js"></script>
     <script>hljs.highlightAll();</script>
 </head>
 
@@ -175,20 +175,18 @@
                 <p style="margin-bottom: 2vw;">Get SmooScroll from GitHub</p>
             </a>
             <h2 style="padding: 1vw 0; background-color: rgb(89, 220, 224);">Gitee (中国内地)</h2>
-            <a href="https://gitee.com/shuninyu/SmooScroll" target="_blank" style="color: white;">
+            <a href="https://gitee.com/shuninyu/SmooScroll/releases" target="_blank" style="color: white;">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="5vw" style="margin-top: 1vw;">
                     <path fill="white" d="M512 1024C229.222 1024 0 794.778 0 512S229.222 0 512 0s512 229.222 512 512-229.222 512-512 512zm259.149-568.883h-290.74a25.293 25.293 0 0 0-25.292 25.293l-.026 63.206c0 13.952 11.315 25.293 25.267 25.293h177.024c13.978 0 25.293 11.315 25.293 25.267v12.646a75.853 75.853 0 0 1-75.853 75.853h-240.23a25.293 25.293 0 0 1-25.267-25.293V417.203a75.853 75.853 0 0 1 75.827-75.853h353.946a25.293 25.293 0 0 0 25.267-25.292l.077-63.207a25.293 25.293 0 0 0-25.268-25.293H417.152a189.62 189.62 0 0 0-189.62 189.645V771.15c0 13.977 11.316 25.293 25.294 25.293h372.94a170.65 170.65 0 0 0 170.65-170.65V480.384a25.293 25.293 0 0 0-25.293-25.267z"/>
                 </svg>
                 <p>从Gitee获取SmooScroll</p>
             </a>
             <p style="padding-top: 0.4vw; font-size: 0.8vw;">
-                *由于Gitee平台限制，SmooScroll的Gitee仓库不提供release，<br>
-                请下载仓库源码ZIP自行提取需要的版本，或者在预览页复制源码。<br>
-                SmooScroll的Gitee仓库只是GitHub仓库的镜像，不保证与GitHub仓库同步更新。
+                *SmooScroll的Gitee仓库只是GitHub仓库的镜像，不保证与GitHub仓库同步更新。
             </p>
             <h3 style="padding-top: 2vw; padding-bottom: 1vw;">② 在HTML文件中引入你下载的 SmooScroll JavaScript</h3>
             <pre><code class="language-html" style="text-align: left;">&lt;!--记得替换路径和文件名为你自己的路径和对应版本文件名-->
-&lt;script src="your/path/to/smooscroll-1.1.4-auto-lite.min.js">&lt;/script></code></pre>
+&lt;script src="your/path/to/smooscroll-auto-lite.min.js">&lt;/script></code></pre>
             <p style="padding-top: 1vw;">⚠️请注意文件名称，不同版本会有不同的文件名。</p>
             <h3 style="padding-top: 2vw; padding-bottom: 1vw;">③ 创建包裹层（仅 manual 版本）</h3>
             <p style="padding-bottom: 1vw;">在&lt;body>中添加</p>
@@ -235,7 +233,7 @@
                 </tr>
                 <tr>
                     <td>bezier</td>
-                    <td><a style="background-color: rgb(70, 139, 141);">.35,.73,.5,1</a></td>
+                    <td><a style="background-color: rgb(70, 139, 141);">.35,.73,.69,1</a></td>
                     <td>平滑滚动的贝塞尔曲线值（⚠️如果你不知道这是什么，那别动它就完事了）</td>
                 </tr>
             </table>
@@ -270,12 +268,12 @@
                 </tr>
                 <tr>
                     <td>positionRight</td>
-                    <td><a style="background-color: rgb(70, 139, 141);">20px</a></td>
+                    <td><a style="background-color: rgb(70, 139, 141);">20px	</a></td>
                     <td>按钮距离页面窗口右端的距离，单位也可以改为vw</td>
                 </tr>
                 <tr>
                     <td>positionBottom</td>
-                    <td><a style="background-color: rgb(70, 139, 141);">20px</a></td>
+                    <td><a style="background-color: rgb(70, 139, 141);">20px	</a></td>
                     <td>按钮距离页面窗口底端的距离，单位也可以改为vw</td>
                 </tr>
                 <tr>
@@ -323,7 +321,7 @@
                 <p style="margin-bottom: 2vw;">Get SmooScroll from GitHub</p>
             </a>
             <h2 style="padding: 1vw 0; background-color: rgb(89, 220, 224);">Gitee (中国内地)</h2>
-            <a href="https://gitee.com/shuninyu/SmooScroll" target="_blank" style="color: white;">
+            <a href="https://gitee.com/shuninyu/SmooScroll/releases" target="_blank" style="color: white;">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="5vw" style="margin-top: 1vw;">
                     <path fill="white" d="M512 1024C229.222 1024 0 794.778 0 512S229.222 0 512 0s512 229.222 512 512-229.222 512-512 512zm259.149-568.883h-290.74a25.293 25.293 0 0 0-25.292 25.293l-.026 63.206c0 13.952 11.315 25.293 25.267 25.293h177.024c13.978 0 25.293 11.315 25.293 25.267v12.646a75.853 75.853 0 0 1-75.853 75.853h-240.23a25.293 25.293 0 0 1-25.267-25.293V417.203a75.853 75.853 0 0 1 75.827-75.853h353.946a25.293 25.293 0 0 0 25.267-25.292l.077-63.207a25.293 25.293 0 0 0-25.268-25.293H417.152a189.62 189.62 0 0 0-189.62 189.645V771.15c0 13.977 11.316 25.293 25.294 25.293h372.94a170.65 170.65 0 0 0 170.65-170.65V480.384a25.293 25.293 0 0 0-25.293-25.267z"/>
                 </svg>
@@ -367,7 +365,7 @@
                 </div>
             </div>
             <div class="line" style="margin-top: 3vw; margin-bottom: 1vw;"></div>
-            <p>This website uses <a href="https://github.com/ShuninYu/SmooScroll" target="_blank" style="color: rgb(255, 255, 255);">SmooScroll</a>.</p>
+            <p>This website uses <a href="/" target="_blank" style="color: rgb(255, 255, 255);">SmooScroll</a>.</p>
             <p>All rights reserved © 孤灯从流 | ShuninYu</p>
         </div>
     </footer>
