@@ -6,6 +6,7 @@
     <title>示例 - SmooScroll 平滑滚动页面 | Smooth your scroll</title>
     <link rel="icon" href="../smooscroll-logo.svg">
     <link rel="stylesheet" href="../basic.css">
+    <link rel="stylesheet" href="../font/result.css">
     <script src="../smooscroll-1.1.4-manual.js"></script>
     <link rel="stylesheet" href="../monokai.min.css">
     <script src="../highlight.min.js"></script>
@@ -14,35 +15,32 @@
 
 <body>
     <div class="fixbox">
+        <h1>不参与滚动的元素</h1>
         <p>
             这是一个fixed box!<br>
-            它没有被包裹在<br>
-            SmooScroll容器中<br>
-            所以它不会滚动
+            它没有被包裹在SmooScroll容器中，<br>
+            所以它不会参与页面的滚动。
         </p>
     </div>
 
     <div class="smooth-content">
         <div style="text-align: center;">
-            <div style="height: 18vw; position: relative;">
-                <img src="../smooscroll-logo.svg"
-                    style="width: 10vw; margin-top: 3vw;" class="logo">
-                <div style="margin-top: 2em; margin-bottom: 1em;">
-                    <div style="z-index: 1; display: inline-block; margin-right: -1.7em;">
-                        <h1 style="display: inline-block;">S</h1><h2 style=" display: inline-block;">moo</h2><h2 style="display: inline-block; color: rgb(170, 170, 170);">th</h2>
-                    </div>
-                    <div style="z-index: 2; display: inline-block;">
-                        <h1 style="display: inline-block; color: rgb(0, 0, 0);">S</h1><h2 style=" display: inline-block;">croll</h2>
-                    </div>
+            <img src="../smooscroll-logo.svg" style="width: 10vw; margin-top: 3vw;" class="logo">
+            <div style="margin-top: 2em; margin-bottom: 1em;">
+                <div style="z-index: 1; display: inline-block; margin-right: -1.7em;">
+                    <h1 style="display: inline-block;">S</h1><h2 style=" display: inline-block;">moo</h2><h2 style="display: inline-block; color: rgb(221, 120, 120);">th</h2>
                 </div>
+                <div style="z-index: 2; display: inline-block;">
+                    <h1 style="display: inline-block; color: rgb(0, 0, 0);">S</h1><h2 style=" display: inline-block;">croll</h2>
+                </div>
+                <p style="font-size: 1.2vw; font-weight: bold; margin-bottom: 2em;">基于原生滚动条的平滑滚动JS<br>平滑滚动页面 | Smooth your
+                    scroll</p>
             </div>
-            <p style="font-size: 1.2vw; font-weight: bold; margin-bottom: 2em;">基于原生滚动条的平滑滚动JS<br>平滑滚动页面 | Smooth your scroll</p>
-        </div>
-    
-        <div class="navbar">
+            
+            <div class="navbar">
             <a href="/">
                 <div class="navbutton">
-                    <svg fill="#ffffff" width="6vw" viewBox="-4.5 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>home</title> <path d="M19.469 12.594l3.625 3.313c0.438 0.406 0.313 0.719-0.281 0.719h-2.719v8.656c0 0.594-0.5 1.125-1.094 1.125h-4.719v-6.063c0-0.594-0.531-1.125-1.125-1.125h-2.969c-0.594 0-1.125 0.531-1.125 1.125v6.063h-4.719c-0.594 0-1.125-0.531-1.125-1.125v-8.656h-2.688c-0.594 0-0.719-0.313-0.281-0.719l10.594-9.625c0.438-0.406 1.188-0.406 1.656 0l2.406 2.156v-1.719c0-0.594 0.531-1.125 1.125-1.125h2.344c0.594 0 1.094 0.531 1.094 1.125v5.875z"></path> </g></svg>
+                    <svg fill="black" width="6vw" viewBox="-4.5 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>home</title> <path d="M19.469 12.594l3.625 3.313c0.438 0.406 0.313 0.719-0.281 0.719h-2.719v8.656c0 0.594-0.5 1.125-1.094 1.125h-4.719v-6.063c0-0.594-0.531-1.125-1.125-1.125h-2.969c-0.594 0-1.125 0.531-1.125 1.125v6.063h-4.719c-0.594 0-1.125-0.531-1.125-1.125v-8.656h-2.688c-0.594 0-0.719-0.313-0.281-0.719l10.594-9.625c0.438-0.406 1.188-0.406 1.656 0l2.406 2.156v-1.719c0-0.594 0.531-1.125 1.125-1.125h2.344c0.594 0 1.094 0.531 1.094 1.125v5.875z"></path> </g></svg>
                     <div class="navtext" style="margin-left: 0; padding-right: 1vw;">
                         <div><p style="font-size: 1.7vw;">网站首页</p></div>
                         <div><p style="font-size: 1vw; text-transform: uppercase;">homepage</p></div>
@@ -51,7 +49,7 @@
             </a>
             <a href="../sample">
                 <div class="navbutton">
-                    <svg fill="#ffffff" width="5vw" viewBox="0 0 32 32">
+                    <svg fill="black" width="5vw" viewBox="0 0 32 32">
                         <path d="M16.5,19.9C16.5,19.9,16.5,19.9,16.5,19.9l3.1-3.1c0,0,0,0,0,0l2.3-2.3c2.2,0.6,4.5,0,6.2-1.6c1.8-1.8,2.3-4.4,1.4-6.8 c-0.1-0.3-0.4-0.5-0.7-0.6c-0.3-0.1-0.7,0-0.9,0.3L25.6,8l-1.3-0.3L24,6.4l2.2-2.2c0.2-0.2,0.3-0.6,0.3-0.9 c-0.1-0.3-0.3-0.6-0.6-0.7c-2.3-0.9-5-0.4-6.8,1.4c-1.6,1.6-2.2,4-1.6,6.2l-1.6,1.6l-2.6-2.6L11,5.3c-0.1-0.1-0.2-0.3-0.3-0.3 L6.8,2.7C6.4,2.4,5.9,2.5,5.5,2.8L2.5,5.9C2.1,6.2,2.1,6.7,2.3,7.1L4.6,11c0.1,0.1,0.2,0.3,0.3,0.3l3.7,2.2l2.6,2.6l-1.2,1.2 c-2.2-0.6-4.5,0-6.2,1.6c-1.8,1.8-2.3,4.4-1.4,6.8c0.1,0.3,0.4,0.5,0.7,0.6c0.3,0.1,0.7,0,0.9-0.3L6.4,24l1.3,0.3L8,25.6l-2.2,2.2 c-0.2,0.2-0.3,0.6-0.3,0.9c0.1,0.3,0.3,0.6,0.6,0.7c0.8,0.3,1.5,0.4,2.3,0.4c1.6,0,3.3-0.6,4.5-1.9c1.6-1.6,2.2-4,1.6-6.2 L16.5,19.9z"></path>
                         <path d="M22.5,16.8l-6,6l6.1,6.1c0.8,0.8,1.9,1.3,3,1.3s2.2-0.4,3-1.3c0.8-0.8,1.3-1.9,1.3-3c0-1.1-0.4-2.2-1.3-3L22.5,16.8z"></path>
                     </svg>
@@ -61,7 +59,19 @@
                     </div>
                 </div>
             </a>
+            <a href="../faq">
+                <div class="navbutton">
+                    <svg fill="black" width="5vw" viewBox="0 0 24 24"><g id="SVGRepo_iconCarrier"><path d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,16a1,1,0,1,1,1-1A1,1,0,0,1,12,18Zm1.71-4.61c-.71.34-.71.39-.71.61a1,1,0,0,1-2,0,2.6,2.6,0,0,1,1.84-2.42C13.61,11.21,14,11,14,10a1,1,0,0,0-.49-.86A2.82,2.82,0,0,0,12,8.75c-.69,0-2,.26-2,1.25a1,1,0,0,1-2,0c0-1.88,1.68-3.25,4-3.25S16,8.12,16,10A3.41,3.41,0,0,1,13.71,13.39Z"/></g></svg>
+                    <div class="navtext">
+                        <div><p style="font-size: 1.7vw;">疑难解答</p></div>
+                        <div><p style="font-size: 1vw; text-transform: uppercase;">faq</p></div>
+                    </div>
+                </div>
+            </a>
         </div>
+        </div>
+    
+        
             
         <div class="showtext">
             <p>scroll down and<br>feel the smoothness</p>
@@ -76,19 +86,10 @@
         
         <div class="container2">
             <h1 style="padding-top: 3vw; padding-bottom: 2vw;">现在开始使用SmooScroll！</h1><div class="navbar">
-                
-            <a href="/">
-                <div class="navbutton">
-                    <svg fill="#ffffff" width="6vw" viewBox="-4.5 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>home</title> <path d="M19.469 12.594l3.625 3.313c0.438 0.406 0.313 0.719-0.281 0.719h-2.719v8.656c0 0.594-0.5 1.125-1.094 1.125h-4.719v-6.063c0-0.594-0.531-1.125-1.125-1.125h-2.969c-0.594 0-1.125 0.531-1.125 1.125v6.063h-4.719c-0.594 0-1.125-0.531-1.125-1.125v-8.656h-2.688c-0.594 0-0.719-0.313-0.281-0.719l10.594-9.625c0.438-0.406 1.188-0.406 1.656 0l2.406 2.156v-1.719c0-0.594 0.531-1.125 1.125-1.125h2.344c0.594 0 1.094 0.531 1.094 1.125v5.875z"></path> </g></svg>
-                    <div class="navtext" style="margin-left: 0; padding-right: 1vw;">
-                        <div><p style="font-size: 1.7vw;">网站首页</p></div>
-                        <div><p style="font-size: 1vw; text-transform: uppercase;">homepage</p></div>
-                    </div>
-                </div>
-            </a>
+
             <a href="../start">
                 <div class="navbutton">
-                    <svg fill="#ffffff" width="5vw" viewBox="0 0 32 32">
+                    <svg fill="black" width="5vw" viewBox="0 0 32 32">
                         <path d="M16.5,19.9C16.5,19.9,16.5,19.9,16.5,19.9l3.1-3.1c0,0,0,0,0,0l2.3-2.3c2.2,0.6,4.5,0,6.2-1.6c1.8-1.8,2.3-4.4,1.4-6.8 c-0.1-0.3-0.4-0.5-0.7-0.6c-0.3-0.1-0.7,0-0.9,0.3L25.6,8l-1.3-0.3L24,6.4l2.2-2.2c0.2-0.2,0.3-0.6,0.3-0.9 c-0.1-0.3-0.3-0.6-0.6-0.7c-2.3-0.9-5-0.4-6.8,1.4c-1.6,1.6-2.2,4-1.6,6.2l-1.6,1.6l-2.6-2.6L11,5.3c-0.1-0.1-0.2-0.3-0.3-0.3 L6.8,2.7C6.4,2.4,5.9,2.5,5.5,2.8L2.5,5.9C2.1,6.2,2.1,6.7,2.3,7.1L4.6,11c0.1,0.1,0.2,0.3,0.3,0.3l3.7,2.2l2.6,2.6l-1.2,1.2 c-2.2-0.6-4.5,0-6.2,1.6c-1.8,1.8-2.3,4.4-1.4,6.8c0.1,0.3,0.4,0.5,0.7,0.6c0.3,0.1,0.7,0,0.9-0.3L6.4,24l1.3,0.3L8,25.6l-2.2,2.2 c-0.2,0.2-0.3,0.6-0.3,0.9c0.1,0.3,0.3,0.6,0.6,0.7c0.8,0.3,1.5,0.4,2.3,0.4c1.6,0,3.3-0.6,4.5-1.9c1.6-1.6,2.2-4,1.6-6.2 L16.5,19.9z"></path>
                         <path d="M22.5,16.8l-6,6l6.1,6.1c0.8,0.8,1.9,1.3,3,1.3s2.2-0.4,3-1.3c0.8-0.8,1.3-1.9,1.3-3c0-1.1-0.4-2.2-1.3-3L22.5,16.8z"></path>
                     </svg>
@@ -98,22 +99,31 @@
                     </div>
                 </div>
             </a>
+            <a href="../faq">
+                <div class="navbutton">
+                    <svg fill="black" width="5vw" viewBox="0 0 24 24"><g id="SVGRepo_iconCarrier"><path d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,16a1,1,0,1,1,1-1A1,1,0,0,1,12,18Zm1.71-4.61c-.71.34-.71.39-.71.61a1,1,0,0,1-2,0,2.6,2.6,0,0,1,1.84-2.42C13.61,11.21,14,11,14,10a1,1,0,0,0-.49-.86A2.82,2.82,0,0,0,12,8.75c-.69,0-2,.26-2,1.25a1,1,0,0,1-2,0c0-1.88,1.68-3.25,4-3.25S16,8.12,16,10A3.41,3.41,0,0,1,13.71,13.39Z"/></g></svg>
+                    <div class="navtext">
+                        <div><p style="font-size: 1.7vw;">疑难解答</p></div>
+                        <div><p style="font-size: 1vw; text-transform: uppercase;">faq</p></div>
+                    </div>
+                </div>
+            </a>
             </div>
-            <h2 style="padding: 1vw 0; background-color: rgb(89, 220, 224);">SmooScroll is on GitHub</h2>
-            <a href="https://github.com/ShuninYu/SmooScroll" target="_blank" style="color: white;">
+            <h2 style="padding: 1vw 0; background-color: rgb(196,205,223);">SmooScroll is on GitHub</h2>
+            <a href="https://github.com/ShuninYu/SmooScroll" target="_blank" style="color: black;">
                 <svg aria-hidden="true" viewBox="0 0 24 24" version="1.1" width="5vw" data-view-component="true" style="margin-top: 1vw;">
-                    <path fill="white" d="M12 1C5.9225 1 1 5.9225 1 12C1 16.8675 4.14875 20.9787 8.52125 22.4362C9.07125 22.5325 9.2775 22.2025 9.2775 21.9137C9.2775 21.6525 9.26375 20.7862 9.26375 19.865C6.5 20.3737 5.785 19.1912 5.565 18.5725C5.44125 18.2562 4.905 17.28 4.4375 17.0187C4.0525 16.8125 3.5025 16.3037 4.42375 16.29C5.29 16.2762 5.90875 17.0875 6.115 17.4175C7.105 19.0812 8.68625 18.6137 9.31875 18.325C9.415 17.61 9.70375 17.1287 10.02 16.8537C7.5725 16.5787 5.015 15.63 5.015 11.4225C5.015 10.2262 5.44125 9.23625 6.1425 8.46625C6.0325 8.19125 5.6475 7.06375 6.2525 5.55125C6.2525 5.55125 7.17375 5.2625 9.2775 6.67875C10.1575 6.43125 11.0925 6.3075 12.0275 6.3075C12.9625 6.3075 13.8975 6.43125 14.7775 6.67875C16.8813 5.24875 17.8025 5.55125 17.8025 5.55125C18.4075 7.06375 18.0225 8.19125 17.9125 8.46625C18.6138 9.23625 19.04 10.2125 19.04 11.4225C19.04 15.6437 16.4688 16.5787 14.0213 16.8537C14.42 17.1975 14.7638 17.8575 14.7638 18.8887C14.7638 20.36 14.75 21.5425 14.75 21.9137C14.75 22.2025 14.9563 22.5462 15.5063 22.4362C19.8513 20.9787 23 16.8537 23 12C23 5.9225 18.0775 1 12 1Z"/>
+                    <path fill="black" d="M12 1C5.9225 1 1 5.9225 1 12C1 16.8675 4.14875 20.9787 8.52125 22.4362C9.07125 22.5325 9.2775 22.2025 9.2775 21.9137C9.2775 21.6525 9.26375 20.7862 9.26375 19.865C6.5 20.3737 5.785 19.1912 5.565 18.5725C5.44125 18.2562 4.905 17.28 4.4375 17.0187C4.0525 16.8125 3.5025 16.3037 4.42375 16.29C5.29 16.2762 5.90875 17.0875 6.115 17.4175C7.105 19.0812 8.68625 18.6137 9.31875 18.325C9.415 17.61 9.70375 17.1287 10.02 16.8537C7.5725 16.5787 5.015 15.63 5.015 11.4225C5.015 10.2262 5.44125 9.23625 6.1425 8.46625C6.0325 8.19125 5.6475 7.06375 6.2525 5.55125C6.2525 5.55125 7.17375 5.2625 9.2775 6.67875C10.1575 6.43125 11.0925 6.3075 12.0275 6.3075C12.9625 6.3075 13.8975 6.43125 14.7775 6.67875C16.8813 5.24875 17.8025 5.55125 17.8025 5.55125C18.4075 7.06375 18.0225 8.19125 17.9125 8.46625C18.6138 9.23625 19.04 10.2125 19.04 11.4225C19.04 15.6437 16.4688 16.5787 14.0213 16.8537C14.42 17.1975 14.7638 17.8575 14.7638 18.8887C14.7638 20.36 14.75 21.5425 14.75 21.9137C14.75 22.2025 14.9563 22.5462 15.5063 22.4362C19.8513 20.9787 23 16.8537 23 12C23 5.9225 18.0775 1 12 1Z"/>
                 </svg>
                 <p>Get SmooScroll from GitHub</p>
             </a>
-            <h2 style="margin-top: 2vw; padding: 1vw 0; background-color: rgb(89, 220, 224);">或者使用CDN链接快速体验auto-lite版本效果</h2>
+            <h2 style="margin-top: 2vw; padding: 1vw 0; background-color: rgb(196,205,223);">或者使用CDN链接快速体验auto-lite版本效果</h2>
             <pre><code class="language-html" style="text-align: left;">&lt;script src="https://cdn.jsdelivr.net/gh/ShuninYu/SmooScroll@v1.1.4/src/1.1.4/smooscroll-1.1.4-auto-lite.min.js">&lt;/script></code></pre>
             <p>在&lt;head>中插入该代码，然后让SmooScroll施展魔法！</p>
             <p style="font-size: 0.8vw; padding-top: 0.4vw; padding-bottom: 3vw;">*如果你的页面有窗口固定元素，该版本效果可能会“用力过猛”<br>请下载manual版本并根据指南使用（相信我，依然很简单）</p>
-            <h2 style="padding: 1vw 0; background-color: rgb(89, 220, 224);">Gitee (中国内地)</h2>
-            <a href="https://gitee.com/shuninyu/SmooScroll/releases" target="_blank" style="color: white;">
+            <h2 style="padding: 1vw 0; background-color: rgb(196,205,223);">Gitee (中国内地)</h2>
+            <a href="https://gitee.com/shuninyu/SmooScroll/releases" target="_blank" style="color: black;">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="5vw" style="margin-top: 1vw;">
-                    <path fill="white" d="M512 1024C229.222 1024 0 794.778 0 512S229.222 0 512 0s512 229.222 512 512-229.222 512-512 512zm259.149-568.883h-290.74a25.293 25.293 0 0 0-25.292 25.293l-.026 63.206c0 13.952 11.315 25.293 25.267 25.293h177.024c13.978 0 25.293 11.315 25.293 25.267v12.646a75.853 75.853 0 0 1-75.853 75.853h-240.23a25.293 25.293 0 0 1-25.267-25.293V417.203a75.853 75.853 0 0 1 75.827-75.853h353.946a25.293 25.293 0 0 0 25.267-25.292l.077-63.207a25.293 25.293 0 0 0-25.268-25.293H417.152a189.62 189.62 0 0 0-189.62 189.645V771.15c0 13.977 11.316 25.293 25.294 25.293h372.94a170.65 170.65 0 0 0 170.65-170.65V480.384a25.293 25.293 0 0 0-25.293-25.267z"/>
+                    <path fill="black" d="M512 1024C229.222 1024 0 794.778 0 512S229.222 0 512 0s512 229.222 512 512-229.222 512-512 512zm259.149-568.883h-290.74a25.293 25.293 0 0 0-25.292 25.293l-.026 63.206c0 13.952 11.315 25.293 25.267 25.293h177.024c13.978 0 25.293 11.315 25.293 25.267v12.646a75.853 75.853 0 0 1-75.853 75.853h-240.23a25.293 25.293 0 0 1-25.267-25.293V417.203a75.853 75.853 0 0 1 75.827-75.853h353.946a25.293 25.293 0 0 0 25.267-25.292l.077-63.207a25.293 25.293 0 0 0-25.268-25.293H417.152a189.62 189.62 0 0 0-189.62 189.645V771.15c0 13.977 11.316 25.293 25.294 25.293h372.94a170.65 170.65 0 0 0 170.65-170.65V480.384a25.293 25.293 0 0 0-25.293-25.267z"/>
                 </svg>
                 <p>从Gitee获取SmooScroll</p>
             </a>
@@ -135,6 +145,7 @@
                         <a href="/" target="_blank">简介</a>
                         <a href="../start" target="_blank">指南</a>
                         <a href="../sample" target="_blank">示例</a>
+                        <a href="../faq" target="_blank">FAQ</a>
                     </div>
                     <div class="navigate">
                         <h1>探索</h1>
