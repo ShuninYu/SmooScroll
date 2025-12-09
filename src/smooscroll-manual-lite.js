@@ -1,7 +1,7 @@
 /*
 SmooScroll.js
 Author 孤灯从流ShuninYu @https://github.com/ShuninYu
-version 1.1.4 manual lite
+version 1.1.5 manual lite
 */
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // 配置参数
     const config = {
         //平滑滚动效果配置
-        scrollStepDuration: "1",  // 每步平滑滚动效果时长（单位秒）
+        scrollStepDuration: "0.8",  // 每步平滑滚动效果时长（单位秒）
         bezier: ".35 , .73 , .5 , 1", // 平滑滚动的贝塞尔曲线值（如果你不知道这是什么，那别动它就完事了）
     };
 
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
             .scroll-container {
                 position: fixed;
                 top: 0;
-                width: 100vw;
+                width: 100%;
                 height: 100vh;
                 overflow: hidden;
             }
