@@ -1,7 +1,7 @@
 /*
 SmooScroll.js
 Author 孤灯从流ShuninYu @https://github.com/ShuninYu
-version 1.1.5 manual
+version 1.2.0 manual
 */
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -13,14 +13,15 @@ document.addEventListener('DOMContentLoaded', function () {
         bezier: ".35 , .73 , .5 , 1", // 平滑滚动的贝塞尔曲线值（如果你不知道这是什么，那别动它就完事了）
 
         //回到顶部按钮配置
-        buttonImage: "../smooscroll-logo.svg",  // 按钮图片路径
-        renderStyle: "normal", // 如果你的按钮图片是原尺寸像素图 改为pixelated
+        buttonImage: "/",  // 按钮图片路径
+        renderStyle: "normal", // 如果你的按钮图片是原尺寸像素图 改为 pixelated
         buttonWidth: "90px", // 按钮宽度
         buttonHeight: "90px", // 按钮高度
         positionRight: "20px", // 按钮定位 距离窗口右侧的宽度
         positionBottom: "20px", // 按钮定位 距离窗口底部的高度
         showAtPosition: 80,  // 显示按钮所需要的滚动距离
     };
+    var stickyDisplay = "flex"; // 粘性定位元素的默认显示模式
 
     (function injectStyles() {
         const styleTag = document.createElement('style');
@@ -117,6 +118,53 @@ document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener("load", resize_body);
     window.addEventListener("resize", resize_body);
 
+    // 检测 smoosticky 和 smoosticker 的变量
+    let smoosticky = null;
+    let smoosticker = null;
+    let lastStickyState = null; // 记录上一次的状态，避免不必要的更新
+    
+    // 初始化获取元素
+    function initStickyElements() {
+        smoosticky = document.getElementById('smoosticky');
+        smoosticker = document.getElementById('smoosticker');
+    }
+    
+    // 更新 sticky 检测函数
+    function updateStickyDetection() {
+        if (smoosticky && smoosticker) {
+            const stickyRect = smoosticky.getBoundingClientRect();
+            const isStickyVisible = stickyRect.top <= 0;
+            
+            // 只有当状态改变时才更新，减少不必要的 DOM 操作
+            if (isStickyVisible !== lastStickyState) {
+                if (isStickyVisible) {
+                    // 窗口顶部超过 smoosticky 顶部
+                    smoosticker.style.display = stickyDisplay;
+                    smoosticky.style.opacity = 0;
+                } else {
+                    // 窗口顶部没有超过 smoosticky 顶部
+                    smoosticker.style.display = "none";
+                    smoosticky.style.opacity = 1;
+                }
+                lastStickyState = isStickyVisible;
+            }
+        }
+    }
+    
+    // 高灵敏度的检测函数，使用 requestAnimationFrame 确保实时更新
+    function highSensitivityDetection() {
+        updateStickyDetection();
+        requestAnimationFrame(highSensitivityDetection); // 循环检测
+    }
+    
+    // 初始检测和启动高灵敏度检测
+    function initAndStartDetection() {
+        initStickyElements();
+        updateStickyDetection(); // 初始检测
+        requestAnimationFrame(highSensitivityDetection); // 启动高灵敏度检测
+    }
+    
+    // 回到顶部按钮
     window.addEventListener("scroll", handleScroll);
 
     function handleScroll() {
@@ -134,4 +182,22 @@ document.addEventListener('DOMContentLoaded', function () {
             behavior: "smooth"
         });
     };
+    
+    // 页面加载后初始化并启动高灵敏度检测
+    window.addEventListener("load", function() {
+        initAndStartDetection();
+        resize_body();
+    });
+    
+    // 监听 DOM 变化，确保动态添加的元素也能被检测到
+    const domObserver = new MutationObserver(function() {
+        initStickyElements(); // 重新获取元素
+        updateStickyDetection(); // 更新检测
+    });
+    
+    // 开始观察 DOM 变化
+    domObserver.observe(document.body, {
+        childList: true,
+        subtree: true
+    });
 });

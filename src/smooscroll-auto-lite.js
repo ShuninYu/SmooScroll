@@ -1,7 +1,7 @@
 /*
 SmooScroll.js
 Author 孤灯从流ShuninYu @https://github.com/ShuninYu
-version 1.1.5 auto lite
+version 1.2.0 auto lite
 */
 
 document.addEventListener('DOMContentLoaded', function () {
