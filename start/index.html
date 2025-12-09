@@ -114,29 +114,34 @@
             </p>
             <table style="border: solid 0.2vw black; margin: 0 auto; color: #000;">
                 <tr>
-                    <th>版本后缀</td>
-                    <th>自动包裹全部页面</td>
-                    <th>自带回到顶部按钮</td>
+                    <th>版本后缀</th>
+                    <th>页面包裹</th>
+                    <th>自带回到顶部按钮</th>
+                    <th>*伪sticky效果</th>
                 </tr>
                 <tr>
                     <td>auto</td>
+                    <td>自动包裹全部页面内容</td>
                     <td>✅</td>
-                    <td>✅</td>
+                    <td>❌</td>
                 </tr>
                 <tr>
                     <td>auto-lite</td>
-                    <td>✅</td>
+                    <td>自动包裹全部页面内容</td>
+                    <td>❌</td>
                     <td>❌</td>
                 </tr>
                 <tr>
                     <td>manual</td>
-                    <td>❌</td>
+                    <td>手动包裹页面自选内容</td>
+                    <td>✅</td>
                     <td>✅</td>
                 </tr>
                 <tr>
                     <td>manual-lite</td>
+                    <td>手动包裹页面自选内容</td>
                     <td>❌</td>
-                    <td>❌</td>
+                    <td>✅</td>
                 </tr>
             </table>
             <p style="width: 30vw; margin: 0 auto; padding: 1vw 0;">
@@ -159,6 +164,10 @@
                 带有lite的版本不包含SmooScroll的回到顶部按钮，如果你的页面已经有了回到顶部按钮，且部署了lite版本以后这个按钮仍然完美工作，那么就可以放心的使用lite版本。<br>
                 如果使用lite版本的SmooScroll以后，你的回到顶部按钮失效了，那么建议使用不带lite的版本。
             </p>
+            <h2 style="margin-top: 1vw;">伪 sticky 效果</h2>
+            <p style="width: 30vw; margin: 0 auto; text-align: left; padding-top: 1vw; padding-bottom: 3vw;">
+                注：该效果目前为实验性效果（v1.2.0）。<br>SmooScroll的工作原理会导致页面中的 position: sticky; 失效，所以添加了一个可以实现视觉上类似sticky效果的功能来实现粘性定位效果。 目前伪sticky功能只支持顶部附着，且一个页面内最多只能有一个伪sticky元素，但是该伪sticky元素可以有无限制的子元素。
+            </p>
         </div>
 
         <div class="container2">
@@ -172,7 +181,7 @@
                 &lt;head>内即可！不需要任何其他操作即可使SmooScroll生效！<br>
                 （该CDN链接为最新版本，请放心复制）
             </p>
-            <pre><code class="language-html" style="text-align: left;">&lt;script src="https://cdn.jsdelivr.net/gh/ShuninYu/SmooScroll@v1.1.4/src/1.1.4/smooscroll-1.1.4-auto-lite.min.js">&lt;/script></code></pre>
+            <pre><code class="language-html" style="text-align: left;">&lt;script src="https://cdn.jsdelivr.net/gh/ShuninYu/SmooScroll@v1.2.0/src/smooscroll-auto-lite.min.js">&lt;/script></code></pre>
             <p>*如果需要调整滚动效果，请使用本地部署</p>
             <h2 style="padding-top: 2vw; padding-bottom: 1vw;">2. 本地部署（适合所有版本）</h2>
             <h3 style="padding-top: 1vw; padding-bottom: 1vw;">① 下载SmooScroll并存储在你的网站目录中</h3>
@@ -204,16 +213,70 @@
             <pre><code class="language-html" style="text-align: left;">&lt;body>
     &lt;!-- ↓↓↓不需要滚动的元素↓↓↓ -->
     &lt;div class="topbar">
-        &lt;h1>固定的标题</h1>
+        &lt;h1>固定的标题&lt;/h1>
     &lt;/div>
     &lt;!-- ↓↓↓创建包裹层并将需要滚动的内容包裹进去↓↓↓ -->
     &lt;div class="smooth-content">
         &lt;!-- ↓↓↓需要滚动的元素↓↓↓ -->
         &lt;div class="article">
-            &lt;p>需要滚动的内容</p>
+            &lt;p>需要滚动的内容&lt;/p>
         &lt;/div>
     &lt;/div>
 &lt;/body></code></pre>
+            <h3 style="padding-top: 2vw; padding-bottom: 1vw;">③ 设置伪sticky效果（仅manual版本）</h3>
+            <p style="margin-bottom: 1vw; font-size: 0.8vw;">*如果有需要在窗口顶部粘性定位的元素（例如顶部导航栏），那么可以设置伪sticky效果。</p>
+            <p style="padding-bottom: 1vw;">接下来将以下面这个 HTML 片段为例，假设&lt;div class="topbar">&lt;/div>是需要粘性定位的元素，该元素的布局为 display: flex;。</p>
+            <pre><code class="language-html" style="text-align: left;">&lt;body>
+    &lt;div class="smooth-content">&lt;/div>
+            &lt;div class="topbar">&lt;!--顶部导航栏，需要粘性定位-->
+                &lt;a>按钮1&lt;/a>
+                &lt;a>按钮2&lt;/a>
+            &lt;/div>
+        &lt;div class="article">
+            &lt;p>正文内容&lt;/p>
+        &lt;/div>
+    &lt;/div>
+&lt;/body></code></pre>
+            <p style="padding-bottom: 1vw;">定位到需要粘性定位的元素，复制该元素，将副本粘贴在SmooScroll容器之外。并在该元素本体中添加 id="smoosticky"，在副本中添加 id="smoosticker"。</p>
+            <pre><code class="language-html" style="text-align: left;">&lt;body>
+    &lt;div class="smooth-content">&lt;/div>
+            &lt;div class="topbar" id="smoosticky">&lt;!--顶部导航栏，需要粘性定位-->
+                &lt;a>按钮1&lt;/a>
+                &lt;a>按钮2&lt;/a>
+            &lt;/div>
+        &lt;div class="article">
+            &lt;p>正文内容&lt;/p>
+        &lt;/div>
+    &lt;/div>
+    &lt;div class="topbar" id="smoosticker">&lt;!--顶部导航栏的副本-->
+        &lt;a>按钮1&lt;/a>
+        &lt;a>按钮2&lt;/a>
+    &lt;/div>
+&lt;/body></code></pre>
+            <p style="padding-top: 1vw; padding-bottom: 1vw;">给副本创建并添加一个自定义的class，将副本变为 position: fixed; 的元素，并且调整css，使其与本体完全重合（z-index一定要高于本体）。</p>
+            <pre><code class="language-html" style="text-align: left;">&lt;body>
+    &lt;div class="smooth-content">&lt;/div>
+            &lt;div class="topbar sticky-element" id="smoosticky">&lt;!--顶部导航栏，需要粘性定位-->
+                &lt;a>按钮1&lt;/a>
+                &lt;a>按钮2&lt;/a>
+            &lt;/div>
+        &lt;div class="article">
+            &lt;p>正文内容&lt;/p>
+        &lt;/div>
+    &lt;/div>
+    &lt;div class="topbar" id="smoosticker">&lt;!--顶部导航栏的副本-->
+        &lt;a>按钮1&lt;/a>
+        &lt;a>按钮2&lt;/a>
+    &lt;/div>
+    &lt;style>
+        .sticky-element {
+            position: fixed;
+        }
+    &lt;/style>
+&lt;/body></code></pre>
+            <p style="padding-top: 1vw; padding-bottom: 1vw;">在SmooScroll中，找到位于 const config 下面的 var stickyDisplay ，将其赋值改为粘性定位元素本体的布局。在这个例子中，topbar 本体的布局为 display: flex; 。</p>
+            <pre><code class="language-css" style="text-align: left;">var stickyDisplay = "flex"; /*请根据你的情况修改*/</code></pre>
+            <p style="padding-top: 1vw; padding-bottom: 1vw;">这样就完成了伪sticky效果的设置。 通过这个例子，应该也能了解这个伪sticky效果的原理。其实很简单，就是在窗口顶部预先放置一个锁定窗口位置的副本，当窗口顶部开始覆盖粘性定位元素的瞬间，隐藏该元素本体并显示锁定位置的副本。当元素本体从顶部完整回到窗口内时，隐藏副本并显示本体。 这个伪sticky效果由于是通过调整元素本体透明度来隐藏本体，所以元素所占的空间并不会消失，从而不会改变页面原本的布局。</p>
             <p style="padding-top: 1vw;">这样，SmooScroll就成功的部署在你的网页里了。</p>
             <p style="padding-top: 1vw;">接下来就是修改SmooScroll的配置，来自定义你的平滑滚动体验。</p>
             <p style="padding-bottom: 3vw; font-size: 0.8vw;">
@@ -244,6 +307,19 @@
                     <td>bezier</td>
                     <td><a style="background-color: rgb(70, 139, 141); color: #fff;">.35,.73,.69,1</a></td>
                     <td>平滑滚动的贝塞尔曲线值（⚠️如果你不知道这是什么，那别动它就完事了）</td>
+                </tr>
+            </table>
+            <h2 style="padding-top: 2vw; padding-bottom: 2vw;">伪sticky效果（仅v1.2.0以后的manual版）</h2>
+            <table style="border: solid 0.2vw white; margin: 0 auto;">
+                <tr>
+                    <th>参数</td>
+                    <th>默认值</td>
+                    <th>效果</td>
+                </tr>
+                <tr>
+                    <td>stickyDisplay</td>
+                    <td><a style="background-color: rgb(70, 139, 141); color: #fff;">flex</a></td>
+                    <td>粘性定位元素的默认显示模式，根据你的粘性定位元素的设置来修改</td>
                 </tr>
             </table>
             <h2 style="padding-top: 2vw; padding-bottom: 0.6vw;">自定义回到顶部按钮样式（仅非lite版本）</h2>
@@ -349,7 +425,7 @@
                 *SmooScroll的Gitee仓库只是GitHub仓库的镜像，不保证与GitHub仓库同步更新。
             </p>
             <h2 style="margin-top: 2vw; padding: 1vw 0; background-color: rgb(89, 220, 224);">或者使用CDN链接快速体验auto-lite版本效果</h2>
-            <pre><code class="language-html" style="text-align: left;">&lt;script src="https://cdn.jsdelivr.net/gh/ShuninYu/SmooScroll@v1.1.4/src/1.1.4/smooscroll-1.1.4-auto-lite.min.js">&lt;/script></code></pre>
+            <pre><code class="language-html" style="text-align: left;">&lt;script src="https://cdn.jsdelivr.net/gh/ShuninYu/SmooScroll@v1.2.0/src/smooscroll-auto-lite.min.js">&lt;/script></code></pre>
             <p>在&lt;head>中插入该代码，然后让SmooScroll施展魔法！</p>
             <p style="font-size: 0.8vw; padding-top: 0.4vw; padding-bottom: 3vw;">*如果你的页面有窗口固定元素，该版本效果可能会“用力过猛”<br>请下载manual版本并根据指南使用（相信我，依然很简单）</p>
             </div>
