@@ -15,7 +15,7 @@ SmooScroll is a free, open-source, lightweight, and easy-to-deploy smooth scroll
 
 SmooScroll's effect is based on the native scrollbar; it does not hide the default scrollbar or create a fake scrollbar. It also includes a very easy-to-use "Back to Top" button functionality.
 
-#### Visit the [SmooScroll Official Website (Chinese)](https://smooscroll.shuninyu.fun) for deployment guides, FAQs, and more support.
+#### Visit the [SmooScroll Official Website (Chinese)](https://shuninyu.github.io/SmooScroll/) for deployment guides, FAQs, and more support.
 
 ### Why Use SmooScroll?
 If you need to add a smooth scrolling effect to an entire webpage, SmooScroll is an excellent choice. It is lightweight and simple to use. To use SmooScroll, you only need to import it into your webpage, and it will work!

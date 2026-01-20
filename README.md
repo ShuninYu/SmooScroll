@@ -14,7 +14,7 @@
 #### [English version](https://github.com/ShuninYu/SmooScroll/blob/main/docs/README-en.md)
 SmooScroll是一个免费开源、体积小、部署简单的平滑滚动JS，基于原生JavaScript所以不需要任何依赖（比如jQuery、Vue等等）。
 SmooScroll的效果基于原生滚动条，不会屏蔽默认滚动条或创建假滚动条，同时包含非常简单就能使用的回到顶部按钮功能。
-#### 访问[SmooScroll官网](https://smooscroll.shuninyu.fun)获取部署指南、常见问题等更多支持。
+#### 访问[SmooScroll官网](https://shuninyu.github.io/SmooScroll/)获取部署指南、常见问题等更多支持。
 
 ### 为什么使用SmooScroll？
 如果需要给网页整体添加一个平滑滚动效果，SmooScroll会是一个不错的选择，SmooScroll体积小、简单易用。要使用SmooScroll，你只需要导入SmooScroll到你的网页就可以让它工作！<br>SmooScroll会自动将你的网页内容包裹进SmooScroll容器，让你的网页拥有平滑滚动效果。
