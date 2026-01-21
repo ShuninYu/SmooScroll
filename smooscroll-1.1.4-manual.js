@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
         bezier: ".35 , .73 , .5 , 1", // 平滑滚动的贝塞尔曲线值（如果你不知道这是什么，那别动它就完事了）
 
         //回到顶部按钮配置
-        buttonImage: "/SmooScroll/top-circle.svg",  // 按钮图片路径
+        buttonImage: "/top-circle.svg",  // 按钮图片路径
         renderStyle: "normal", // 如果你的按钮图片是原尺寸像素图 改为pixelated
         buttonWidth: "5vw", // 按钮宽度
         buttonHeight: "5vw", // 按钮高度
